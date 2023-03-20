@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-function LoginSignUp({}){
+function LoginSignUp(){
   const [hasAccount, setHasAccount] = useState(true)
 
   return (
