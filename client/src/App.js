@@ -5,12 +5,14 @@ import ComponentOne from './ComponentOne';
 import ComponentTwo from './ComponentTwo';
 import ComponentThree from './ComponentThree';
 import Home from './Home';
+import LoginSignUp from './LoginSignUp';
 
 function App() {
   return (
     <div className="App">
       <h1>Project site</h1>
       <NavBar/>
+      <LoginSignUp />
       <Routes>
         <Route  path="/" element={<Home/>} />
         <Route  path="/1" element={<ComponentOne/>} />
