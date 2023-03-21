@@ -1,11 +1,11 @@
 import './App.css';
 import {Route, Routes, useNavigate} from "react-router-dom";
-import NavBar from './NavBar';
 import ComponentOne from './ComponentOne';
 import ComponentTwo from './ComponentTwo';
 import ComponentThree from './ComponentThree';
 import Home from './Home';
 import LoginSignUp from './LoginSignUp';
+import NavBar from './Navbar';
 
 function App() {
   return (

@@ -13,4 +13,5 @@ function NavBar( {currentUser, setCurrentUser} ){
   )
 }
 
-export default NavBar
+
+export default NavBar;
