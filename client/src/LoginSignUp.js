@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginSignUp(){
   const [hasAccount, setHasAccount] = useState(true)
@@ -7,6 +7,7 @@ function LoginSignUp(){
     username: "",
     password: ""
   })
+  const navigate = useNavigate();
 
   function resetUserData(){
     setUserInfo(
@@ -30,6 +31,7 @@ function LoginSignUp(){
     e.preventDefault()
     console.log("logging in", userInfo)
     resetUserData()
+    navigate("/")
   }
 
   function handleNewAccount(e){
