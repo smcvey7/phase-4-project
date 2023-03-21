@@ -1,3 +1,5 @@
 class CamperSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :age, :intro, :profile_img
+  attributes :first_name, :last_name, :age, :intro, :profile_img
+
+  has_many :activities
 end
