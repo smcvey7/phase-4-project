@@ -5,7 +5,7 @@ import ComponentTwo from './ComponentTwo';
 import ComponentThree from './ComponentThree';
 import Home from './Home';
 import LoginSignUp from './LoginSignUp';
-import NavBar from './Navbar';
+import NavBar from './NavBar';
 
 function App() {
   return (

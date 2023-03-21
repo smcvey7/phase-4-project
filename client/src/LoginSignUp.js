@@ -8,6 +8,15 @@ function LoginSignUp(){
     password: ""
   })
 
+  function resetUserData(){
+    setUserInfo(
+      {
+        username: "",
+        password: ""
+      }
+    )
+  }
+
   function handleChange(e){
     setUserInfo(
       {
@@ -20,12 +29,14 @@ function LoginSignUp(){
   function handleLogin(e){
     e.preventDefault()
     console.log("logging in", userInfo)
+    resetUserData()
   }
 
   function handleNewAccount(e){
     e.preventDefault()
     console.log("creating account", userInfo)
-
+    resetUserData()
+    setHasAccount(true)
   }
 
   return (
