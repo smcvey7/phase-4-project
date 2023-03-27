@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function LoginSignUp(){
+function LoginSignUp({ onLogin }){
   const [hasAccount, setHasAccount] = useState(true)
   const [userInfo, setUserInfo] = useState({
     username: "",
@@ -29,7 +29,16 @@ function LoginSignUp(){
 
   function handleLogin(e){
     e.preventDefault()
-    console.log("logging in", userInfo)
+    fetch('/login', {
+      method: "POST",
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then((r)=>r.json())
+    .then((user)=>onLogin(user))
+
     resetUserData()
     navigate("/")
   }
@@ -42,17 +51,17 @@ function LoginSignUp(){
   }
 
   return (
-    <div>
-      <div className="flex-container horizontal">
-        <Link onClick={()=>setHasAccount(true)}>Log in</Link>
-        <Link onClick={()=>setHasAccount(false)}>Sign up</Link>
+    <div className="login">
+      <div id="login-signup">
+        <Link className="tab" onClick={()=>setHasAccount(true)}>Log in</Link>
+        <Link className="tab" onClick={()=>setHasAccount(false)}>Sign up</Link>
       </div>
       {hasAccount ?
         <div>
           <h3>Log in</h3>
           <form onSubmit={handleLogin} >
-            Username: <input autoComplete="username" name="username" value={userInfo.username} onChange={handleChange} ></input>
-            Password: <input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} />
+            Username: <input autoComplete="username" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
+            Password: <input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
             <input type="submit" />
           </form>
         </div>
@@ -60,8 +69,8 @@ function LoginSignUp(){
         <div>
           <h3>Sign up</h3>
           <form onSubmit={handleNewAccount}>
-            Username: <input autoComplete="username" name="username" value={userInfo.username} onChange={handleChange} ></input>
-            Password: <input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} />
+            Username: <input autoComplete="username" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
+            Password: <input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
             <input type="submit" />
           </form>
         </div>

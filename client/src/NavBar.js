@@ -1,14 +1,29 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-function NavBar( {currentUser, setCurrentUser} ){
+function NavBar(){
   return(
-    <div id='navBar' className='flexContainer'>
-      <NavLink className="navLinks" to="/" >Home</NavLink>
-      <NavLink className="navLinks" to="/1" >Read</NavLink>
-      <NavLink className="navLinks" to="/2" >Watch</NavLink>
-      <NavLink className="navLinks" to="/3" >Listen</NavLink>
-      {/* {currentUser ? <NavLink className='navLinks' to="/login" onClick={()=>setCurrentUser(null)}>Log out</NavLink> : <NavLink className="navLinks" to="/login" >Login</NavLink>} */}
+    <div id='navBar' className='flexContainer horizontal navbar'>
+        <NavLink className="navLinks" to="/" >Home</NavLink>
+        <div className='dropdown'>
+          <button className='dropbtn'>Ages 5-7
+            <i className='fa fa-caret-down'></i>
+          </button>
+          <div className='dropdown-content'>
+            <NavLink className="navLinks" to="/sports" >Sports</NavLink>
+            <NavLink className="navLinks" to="/discovery" >Discovery</NavLink>
+          </div>
+        </div>
+        <div className='dropdown'>
+          <button className='dropbtn'>Ages 8-10
+            <i className='fa fa-caret-down'></i>
+          </button>
+          <div className='dropdown-content'>
+            <NavLink className="navLinks" to="/sports" >Sports</NavLink>
+            <NavLink className="navLinks" to="/discovery" >Discovery</NavLink>
+          </div>
+        </div>
+        <NavLink className="navLinks" to="/contact" >Contact</NavLink>
     </div>
   )
 }

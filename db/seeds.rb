@@ -39,7 +39,7 @@ end
   }
 end
 
-100.times do
+10.times do
   camper_list << {
     username: Faker::Twitter.screen_name,
     first_name: Faker::Name.first_name,
