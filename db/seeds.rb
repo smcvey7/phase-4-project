@@ -14,7 +14,7 @@ activity_list = []
 signup_list = []
 
 10.times do
-  ages = [rand(8..17), rand(8..17)]
+  ages = [rand(5..10), rand(5..10)]
   lengths = [30, 45, 60, 90, 120]
   times = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"]
   activity_list << {
@@ -39,12 +39,12 @@ end
   }
 end
 
-10.times do
+100.times do
   camper_list << {
     username: Faker::Twitter.screen_name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    age: Faker::Number.within(range: 6..17),
+    age: Faker::Number.within(range: 5..10),
     intro: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
     profile_img: emojis[rand(180)]
 

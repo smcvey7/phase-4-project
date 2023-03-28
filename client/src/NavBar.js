@@ -10,8 +10,8 @@ function NavBar(){
             <i className='fa fa-caret-down'></i>
           </button>
           <div className='dropdown-content'>
-            <NavLink className="navLinks" to="/sports" >Sports</NavLink>
-            <NavLink className="navLinks" to="/discovery" >Discovery</NavLink>
+            <a className="navLinks" href="/sports#sportsLittles" >Sports</a>
+            <NavLink className="navLinks" href="/discovery#discoveryBigs" >Discovery</NavLink>
           </div>
         </div>
         <div className='dropdown'>
@@ -19,8 +19,8 @@ function NavBar(){
             <i className='fa fa-caret-down'></i>
           </button>
           <div className='dropdown-content'>
-            <NavLink className="navLinks" to="/sports" >Sports</NavLink>
-            <NavLink className="navLinks" to="/discovery" >Discovery</NavLink>
+            <a className="navLinks" href="/sports#sportsBigs" >Sports</a>
+            <a className="navLinks" href="/discovery#discoveryBigs" >Discovery</a>
           </div>
         </div>
         <NavLink className="navLinks" to="/contact" >Contact</NavLink>

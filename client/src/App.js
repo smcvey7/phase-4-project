@@ -9,6 +9,7 @@ import Welcome from './Welcome';
 import Register from './Register';
 import Sports from './Sports';
 import Discovery from './Discovery';
+import Registrations from './Registrations';
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
     <div id='app'>
       <div id='heading' className='flexContainer horizontal'>
         <div id='title' className='flexContainer vertical'>
-          <h1>Scamp</h1>
+          <h1>Scamps</h1>
           <h3>Salem Camps</h3>
         </div>
         <Welcome currentUser={currentUser} onLogout={onLogout} />
@@ -42,6 +43,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/registrations' element={<Registrations currentUser={currentUser} />} />
       </Routes>
       </div>
     </div>

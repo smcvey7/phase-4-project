@@ -8,6 +8,7 @@ function Welcome({ currentUser, onLogout }){
       {currentUser ?
         <div>
           <em>Welcome, {currentUser.first_name} </em><br/>
+          <NavLink to='/registrations'>My registrations</NavLink><br/>
           <NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink>
         </div>:
         <div>
