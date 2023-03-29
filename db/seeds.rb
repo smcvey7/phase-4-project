@@ -22,7 +22,7 @@ def randomizeRegistrations
     }
 
   4.times{ |index|
-    rand_num = rand(13)
+    rand_num = rand(10)
     if rand_num <= 5
       registrations[:"time#{index+1}"][rand_num] = true
     end
