@@ -13,6 +13,24 @@ camper_list = []
 activity_list = []
 signup_list = []
 
+def randomizeRegistrations
+  registrations = {
+    time1: [false, false, false, false, false ,false],
+    time2: [false, false, false, false, false ,false],
+    time3: [false, false, false, false, false ,false],
+    time4: [false, false, false, false, false ,false]
+    }
+
+  4.times{ |index|
+    rand_num = rand(13)
+    if rand_num <= 5
+      registrations[:"time#{index+1}"][rand_num] = true
+    end
+  }
+
+  return registrations
+end
+
 10.times do
   ages = [rand(5..10), rand(5..10)]
   lengths = [30, 45, 60, 90, 120]
@@ -40,14 +58,14 @@ end
 end
 
 100.times do
+
   camper_list << {
     username: Faker::Twitter.screen_name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     age: Faker::Number.within(range: 5..10),
-    intro: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
-    profile_img: emojis[rand(180)]
-
+    profile_img: emojis[rand(180)],
+    registrations: randomizeRegistrations
   }
 end
 

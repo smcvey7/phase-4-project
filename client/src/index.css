@@ -31,6 +31,10 @@ code {
   justify-content: space-around
 }
 
+h4{
+  text-align: center;
+}
+
 
 /* Navbar container */
 .navbar {
