@@ -11,7 +11,7 @@ function NavBar(){
           </button>
           <div className='dropdown-content'>
             <a className="navLinks" href="/sports#sportsLittles" >Sports</a>
-            <NavLink className="navLinks" href="/discovery#discoveryBigs" >Discovery</NavLink>
+            <a className="navLinks" href="/discovery#discoveryLittles" >Discovery</a>
           </div>
         </div>
         <div className='dropdown'>

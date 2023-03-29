@@ -60,7 +60,7 @@ function LoginSignUp({ onLogin }){
         <div>
           <h3>Log in</h3>
           <form onSubmit={handleLogin} >
-            Username: <input autoComplete="username" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
+            Username: <input autoComplete="username" autocapitalize="none" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
             Password: <input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
             <input type="submit" />
           </form>

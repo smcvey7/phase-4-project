@@ -18,22 +18,22 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>BASIC SKILLS</h3>
-              <button name="basicSkills" onClick={onSelect}>Learn more</button>
+              <button name="basicSkillsLittles" onClick={onSelect}>Learn more</button>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
-              <button name="track" onClick={onSelect}>Learn more</button>
+              <button name="trackLittles" onClick={onSelect}>Learn more</button>
             </div>
           </div>
         </div>
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
-            <button name="soccer" onClick={onSelect}>Learn more</button>
+            <button name="soccerLittles" onClick={onSelect}>Learn more</button>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
-            <button name="baseball" onClick={onSelect}>Learn more</button> 
+            <button name="baseballLittles" onClick={onSelect}>Learn more</button> 
           </div>
         </div>
       </div>
@@ -44,22 +44,22 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>ADVANCED SKILLS</h3>
-              <button name="advancedSkills" onClick={onSelect}>Learn more</button>
+              <button name="advancedSkillsBigs" onClick={onSelect}>Learn more</button>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
-              <button name="track" onClick={onSelect}>Learn more</button>
+              <button name="trackBigs" onClick={onSelect}>Learn more</button>
             </div>
           </div>
         </div>
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
-            <button name="soccer" onClick={onSelect}>Learn more</button>
+            <button name="soccerBigs" onClick={onSelect}>Learn more</button>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
-            <button name="baseball" onClick={onSelect}>Learn more</button> 
+            <button name="baseballBigs" onClick={onSelect}>Learn more</button> 
           </div>
         </div>
       </div>
