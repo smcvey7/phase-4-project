@@ -8,13 +8,13 @@ function Home(){
       <h2>CAMPS & CLASSES</h2>
       <div className="flexContainer horizontal spaceAround">
         <div>
-          <h2>*sports image*</h2>
           <h2>SPORT CAMPS</h2>
+          <img src="./img/soccer_5_7.jpeg" width="400px" height="230px" /><br/>
           <NavLink to="/sports">Learn more</NavLink>
         </div>
         <div>
-          <h2>*discovery image*</h2>
           <h2>DISCOVERY CAMPS</h2>
+          <img src="./img/science_5_7_3.jpeg" width="400px" height="230px" /><br/>
           <NavLink to="/discovery">Learn more</NavLink>
         </div>
       </div>

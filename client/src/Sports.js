@@ -18,10 +18,12 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>BASIC SKILLS</h3>
+              <img src="./img/Basic_5_7_2.png" width="400px" height="230px" /><br/>
               <button name="basicSkillsLittles" onClick={onSelect}>Learn more</button>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
+              <img src="./img/Track_5_7_2.png" width="400px" height="230px" /><br/>
               <button name="trackLittles" onClick={onSelect}>Learn more</button>
             </div>
           </div>
@@ -29,10 +31,12 @@ function Sports(){
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
+            <img src="./img/soccer_5_7.jpeg" width="400px" height="230px" /><br/>
             <button name="soccerLittles" onClick={onSelect}>Learn more</button>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
+            <img src="./img/baseball_5_7_1.jpeg" width="400px" height="230px" /><br/>
             <button name="baseballLittles" onClick={onSelect}>Learn more</button> 
           </div>
         </div>
@@ -44,10 +48,12 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>ADVANCED SKILLS</h3>
+              <img src="./img/Basic_8_10.png" width="400px" height="230px" /><br/>
               <button name="advancedSkillsBigs" onClick={onSelect}>Learn more</button>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
+              <img src="./img/Track_8_10_3.png" width="400px" height="230px" /><br/>
               <button name="trackBigs" onClick={onSelect}>Learn more</button>
             </div>
           </div>
@@ -55,10 +61,12 @@ function Sports(){
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
+            <img src="./img/Soccer_8_10_1.jpeg" width="400px" height="230px" /><br/>
             <button name="soccerBigs" onClick={onSelect}>Learn more</button>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
+            <img src="./img/baseball_8_10_girls.jpeg" width="400px" height="230px" /><br/>
             <button name="baseballBigs" onClick={onSelect}>Learn more</button> 
           </div>
         </div>

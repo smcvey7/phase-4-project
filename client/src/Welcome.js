@@ -12,8 +12,8 @@ function Welcome({ currentUser, onLogout }){
           <NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink>
         </div>:
         <div>
-          <NavLink to="/login">Log in</NavLink>
-          <NavLink to="/register">Sign up</NavLink>
+          <NavLink className="welcomeLink" to="/login">Log in</NavLink>
+          <NavLink className="welcomeLink" to="/register">Sign up</NavLink>
         </div>
         }
     </div>
