@@ -2,23 +2,38 @@ import React, {useState} from "react";
 
 function Registrations({currentUser}){
 
-  const [formData, setFormData] = useState(currentUser ? currentUser.registrations : {
-    time1: [false, false, false, false, false ,false],
-    time2: [false, false, false, false, false ,false],
-    time3: [false, false, false, false, false ,false],
-    time4: [false, false, false, false, false ,false]
+  // const [formData, setFormData] = useState(currentUser ? currentUser.registrations : {
+  //   time1: "none",
+  //   time2: "none",
+  //   time3: "none",
+  //   time4: "none"
+  //   }
+  // )
+
+  const [formData, setFormData] = useState({
+    time1: "none",
+    time2: "none",
+    time3: "none",
+    time4: "none"
     }
   )
 
   function handleChange(e){
-    const activities = [false, false, false, false, false, false]
-    console.log(activities[parseInt(e.target.getAttribute("activity"))])
-    activities[parseInt(e.target.getAttribute("activity"))]=e.target.checked
+    // const activities = [false, false, false, false, false, false]
+    // console.log(activities[parseInt(e.target.getAttribute("activity"))])
+    // activities[parseInt(e.target.getAttribute("activity"))]=e.target.checked
+    // setFormData({
+    //   ...formData,
+    //   [e.target.getAttribute("time")]: activities
+    // })
+   
+
     setFormData({
       ...formData,
-      [e.target.getAttribute("time")]: activities
+      [e.target.name]: e.target.value
     })
-    console.log(formData)
+
+     console.log(formData)
   }
 
   return(
@@ -28,7 +43,7 @@ function Registrations({currentUser}){
       <ul>
 
       </ul>
-      <form>
+      {/* <form>
         {currentUser.age < 8 ? 
           <div>
             <h3>5-7 year old activities</h3>
@@ -86,6 +101,40 @@ function Registrations({currentUser}){
           </div>
         }
 
+      </form> */}
+      <form>
+        6/5-16:
+          <select name="time1" value={formData.time1} defaultValue="none" onChange={handleChange}>
+            <option value="none">None</option>
+            <option value="basicSkillsLittles">Basic Skills</option>
+            <option value="soccerLittles">Soccer</option>
+            <option value="baseballLittles">Baseball</option>
+            <option value="trackLittles">Track</option>
+          </select><br/>
+        6/19-30:
+        <select name="time2" value={formData.time2} defaultValue="none" onChange={handleChange}>
+            <option value="none">None</option>
+            <option value="basicSkillsLittles">Basic Skills</option>
+            <option value="soccerLittles">Soccer</option>
+            <option value="baseballLittles">Baseball</option>
+            <option value="trackLittles">Track</option>
+          </select><br/>
+        7/3-14:
+        <select name="time3" value={formData.time3} defaultValue="none" onChange={handleChange}>
+            <option value="none">None</option>
+            <option value="basicSkillsLittles">Basic Skills</option>
+            <option value="soccerLittles">Soccer</option>
+            <option value="baseballLittles">Baseball</option>
+            <option value="trackLittles">Track</option>
+          </select><br/>
+        7/17-28:
+        <select name="time4" value={formData.time4} defaultValue="none" onChange={handleChange}>
+            <option value="none">None</option>
+            <option value="basicSkillsLittles">Basic Skills</option>
+            <option value="soccerLittles">Soccer</option>
+            <option value="baseballLittles">Baseball</option>
+            <option value="trackLittles">Track</option>
+          </select><br/>
       </form>
     </div> :
     <></>

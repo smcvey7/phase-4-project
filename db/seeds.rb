@@ -7,69 +7,411 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-emojis = ["😀","😁","😂","😃","😄","😅","😆","😇","😈","👿","😉","😊","☺️","😋","😌","😍","😎","😏","😐","😑","😒","😓","😔","😕","😖","😗","😘","😙","😚","😛","😜","😝","😞","😟","😠","😡","😢","😣","😤","😥","😦","😧","😨","😩","😪","😫","😬","😭","😮","😯","😰","😱","😲","😳","😴","😵","😶","😷","😸","😹","😺","😻","😼","😽","😾","😿","🙀","👣","👤","👥","👶","👶🏻","👶🏼","👶🏽","👶🏾","👶🏿","👦","👦🏻","👦🏼","👦🏽","👦🏾","👦🏿","👧","👧🏻","👧🏼","👧🏽","👧🏾","👧🏿","👨","👨🏻","👨🏼","👨🏽","👨🏾","👨🏿","👩","👩🏻","👩🏼","👩🏽","👩🏾","👩🏿","👪","👨‍👩‍👧","👨‍👩‍👧‍👦","👨‍👩‍👦‍👦","👨‍👩‍👧‍👧","👩‍👩‍👦","👩‍👩‍👧","👩‍👩‍👧‍👦","👩‍👩‍👦‍👦","👩‍👩‍👧‍👧","👨‍👨‍👦","👨‍👨‍👧","👨‍👨‍👧‍👦","👨‍👨‍👦‍👦","👨‍👨‍👧‍👧","👫","👬","👭","👯","👰","👰🏻","👰🏼","👰🏽","👰🏾","👰🏿","👱","👱🏻","👱🏼","👱🏽","👱🏾","👱🏿","👲","👲🏻","👲🏼","👲🏽","👲🏾","👲🏿","👳","👳🏻","👳🏼","👳🏽","👳🏾","👳🏿","👴","👴🏻","👴🏼","👴🏽","👴🏾","👴🏿","👵","👵🏻","👵🏼","👵🏽","👵🏾","👵🏿","👮","👮🏻","👮🏼","👮🏽","👮🏾","👮🏿","👷","👷🏻","👷🏼","👷🏽","👷🏾","👷🏿","👸","👸🏻","👸🏼","👸🏽","👸🏾","👸🏿","💂","💂🏻","💂🏼","💂🏽","💂🏾","💂🏿","👼","👼🏻","👼🏼","👼🏽","👼🏾","👼🏿","🎅","🎅🏻","🎅🏼","🎅🏽","🎅🏾","🎅🏿","👻","👹","👺","💩","💀","👽","👾","🙇","🙇🏻","🙇🏼","🙇🏽","🙇🏾","🙇🏿","💁","💁🏻","💁🏼","💁🏽","💁🏾","💁🏿","🙅","🙅🏻","🙅🏼","🙅🏽","🙅🏾","🙅🏿","🙆","🙆🏻","🙆🏼","🙆🏽","🙆🏾","🙆🏿","🙋","🙋🏻","🙋🏼","🙋🏽","🙋🏾","🙋🏿","🙎","🙎🏻","🙎🏼","🙎🏽","🙎🏾","🙎🏿","🙍","🙍🏻","🙍🏼","🙍🏽","🙍🏾","🙍🏿","💆","💆🏻","💆🏼","💆🏽","💆🏾","💆🏿","💇","💇🏻","💇🏼","💇🏽","💇🏾","💇🏿","💑","👩‍❤️‍👩","👨‍❤️‍👨","💏","👩‍❤️‍💋‍👩","👨‍❤️‍💋‍👨","🙌","🙌🏻","🙌🏼","🙌🏽","🙌🏾","🙌🏿","👏","👏🏻","👏🏼","👏🏽","👏🏾","👏🏿","👂","👂🏻","👂🏼","👂🏽","👂🏾","👂🏿","👀","👃","👃🏻","👃🏼","👃🏽","👃🏾","👃🏿","👄","💋","👅","💅","💅🏻","💅🏼","💅🏽","💅🏾","💅🏿","👋","👋🏻","👋🏼","👋🏽","👋🏾","👋🏿","👍","👍🏻","👍🏼","👍🏽","👍🏾","👍🏿","👎","👎🏻","👎🏼","👎🏽","👎🏾","👎🏿","☝","☝🏻","☝🏼","☝🏽","☝🏾","☝🏿","👆","👆🏻","👆🏼","👆🏽","👆🏾","👆🏿","👇","👇🏻","👇🏼","👇🏽","👇🏾","👇🏿","👈","👈🏻","👈🏼","👈🏽","👈🏾","👈🏿","👉","👉🏻","👉🏼","👉🏽","👉🏾","👉🏿","👌","👌🏻","👌🏼","👌🏽","👌🏾","👌🏿","✌","✌🏻","✌🏼","✌🏽","✌🏾","✌🏿","👊","👊🏻","👊🏼","👊🏽","👊🏾","👊🏿","✊","✊🏻","✊🏼","✊🏽","✊🏾","✊🏿","✋","✋🏻","✋🏼","✋🏽","✋🏾","✋🏿","💪","💪🏻","💪🏼","💪🏽","💪🏾","💪🏿","👐","👐🏻","👐🏼","👐🏽","👐🏾","👐🏿","🙏","🙏🏻","🙏🏼","🙏🏽","🙏🏾","🙏🏿","🌱","🌲","🌳","🌴","🌵","🌷","🌸","🌹","🌺","🌻","🌼","💐","🌾","🌿","🍀","🍁","🍂","🍃","🍄","🌰","🐀","🐁","🐭","🐹","🐂","🐃","🐄","🐮","🐅","🐆","🐯","🐇","🐰","🐈","🐱","🐎","🐴","🐏","🐑","🐐","🐓","🐔","🐤","🐣","🐥","🐦","🐧","🐘","🐪","🐫","🐗","🐖","🐷","🐽","🐕","🐩","🐶","🐺","🐻","🐨","🐼","🐵","🙈","🙉","🙊","🐒","🐉","🐲","🐊","🐍","🐢","🐸","🐋","🐳","🐬","🐙","🐟","🐠","🐡","🐚","🐌","🐛","🐜","🐝","🐞","🐾","⚡️","🔥","🌙","☀️","⛅️","☁️","💧","💦","☔️","💨","❄️","🌟","⭐️","🌠","🌄","🌅","🌈","🌊","🌋","🌌","🗻","🗾","🌐","🌍","🌎","🌏","🌑","🌒","🌓","🌔","🌕","🌖","🌗","🌘","🌚","🌝","🌛","🌜","🌞","🍅","🍆","🌽","🍠","🍇","🍈","🍉","🍊","🍋","🍌","🍍","🍎","🍏","🍐","🍑","🍒","🍓","🍔","🍕","🍖","🍗","🍘","🍙","🍚","🍛","🍜","🍝","🍞","🍟","🍡","🍢","🍣","🍤","🍥","🍦","🍧","🍨","🍩","🍪","🍫","🍬","🍭","🍮","🍯","🍰","🍱","🍲","🍳","🍴","🍵","☕️","🍶","🍷","🍸","🍹","🍺","🍻","🍼","🎀","🎁","🎂","🎃","🎄","🎋","🎍","🎑","🎆","🎇","🎉","🎊","🎈","💫","✨","💥","🎓","👑","🎎","🎏","🎐","🎌","🏮","💍","❤️","💔","💌","💕","💞","💓","💗","💖","💘","💝","💟","💜","💛","💚","💙","🏃","🏃🏻","🏃🏼","🏃🏽","🏃🏾","🏃🏿","🚶","🚶🏻","🚶🏼","🚶🏽","🚶🏾","🚶🏿","💃","💃🏻","💃🏼","💃🏽","💃🏾","💃🏿","🚣","🚣🏻","🚣🏼","🚣🏽","🚣🏾","🚣🏿","🏊","🏊🏻","🏊🏼","🏊🏽","🏊🏾","🏊🏿","🏄","🏄🏻","🏄🏼","🏄🏽","🏄🏾","🏄🏿","🛀","🛀🏻","🛀🏼","🛀🏽","🛀🏾","🛀🏿","🏂","🎿","⛄️","🚴","🚴🏻","🚴🏼","🚴🏽","🚴🏾","🚴🏿","🚵","🚵🏻","🚵🏼","🚵🏽","🚵🏾","🚵🏿","🏇","🏇🏻","🏇🏼","🏇🏽","🏇🏾","🏇🏿","⛺️","🎣","⚽️","🏀","🏈","⚾️","🎾","🏉","⛳️","🏆","🎽","🏁","🎹","🎸","🎻","🎷","🎺","🎵","🎶","🎼","🎧","🎤","🎭","🎫","🎩","🎪","🎬","🎨","🎯","🎱","🎳","🎰","🎲","🎮","🎴","🃏","🀄️","🎠","🎡","🎢","🚃","🚞","🚂","🚋","🚝","🚄","🚅","🚆","🚇","🚈","🚉","🚊","🚌","🚍","🚎","🚐","🚑","🚒","🚓","🚔","🚨","🚕","🚖","🚗","🚘","🚙","🚚","🚛","🚜","🚲","🚏","⛽️","🚧","🚦","🚥","🚀","🚁","✈️","💺","⚓️","🚢","🚤","⛵️","🚡","🚠","🚟","🛂","🛃","🛄","🛅","💴","💶","💷","💵","🗽","🗿","🌁","🗼","⛲️","🏰","🏯","🌇","🌆","🌃","🌉","🏠","🏡","🏢","🏬","🏭","🏣","🏤","🏥","🏦","🏨","🏩","💒","⛪️","🏪","🏫","🇦🇺","🇦🇹","🇧🇪","🇧🇷","🇨🇦","🇨🇱","🇨🇳","🇨🇴","🇩🇰","🇫🇮","🇫🇷","🇩🇪","🇭🇰","🇮🇳","🇮🇩","🇮🇪","🇮🇱","🇮🇹","🇯🇵","🇰🇷","🇲🇴","🇲🇾","🇲🇽","🇳🇱","🇳🇿","🇳🇴","🇵🇭","🇵🇱","🇵🇹","🇵🇷","🇷🇺","🇸🇦","🇸🇬","🇿🇦","🇪🇸","🇸🇪","🇨🇭","🇹🇷","🇬🇧","🇺🇸","🇦🇪","🇻🇳","⌚️","📱","📲","💻","⏰","⏳","⌛️","📷","📹","🎥","📺","📻","📟","📞","☎️","📠","💽","💾","💿","📀","📼","🔋","🔌","💡","🔦","📡","💳","💸","💰","💎","🌂","👝","👛","👜","💼","🎒","💄","👓","👒","👡","👠","👢","👞","👟","👙","👗","👘","👚","👕","👔","👖","🚪","🚿","🛁","🚽","💈","💉","💊","🔬","🔭","🔮","🔧","🔪","🔩","🔨","💣","🚬","🔫","🔖","📰","🔑"]
-
 camper_list = []
-activity_list = []
-signup_list = []
 
-def randomizeRegistrations
-  registrations = {
-    time1: [false, false, false, false, false ,false],
-    time2: [false, false, false, false, false ,false],
-    time3: [false, false, false, false, false ,false],
-    time4: [false, false, false, false, false ,false]
-    }
+Activity.create(
+  {
+    name: "basicSkillsLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "basicSkillsLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "basicSkillsLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "basicSkillsLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "artLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceLittles",
+    dates: "time1",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceLittles",
+    dates: "time2",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceLittles",
+    dates: "time3",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceLittles",
+    dates: "time4",
+    age_group: "littles",
+    type: "discovery",
+    spots: rand(10..50)
+  },{
+    name: "advancedSkillsBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "advancedSkillsBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "advancedSkillsBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "advancedSkillsBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "tennisBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "baseballBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "trackBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "soccerBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "sports",
+    spots: rand(10..50)
+  },
+  {
+    name: "artBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "artBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceBigs",
+    dates: "time1",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceBigs",
+    dates: "time2",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceBigs",
+    dates: "time3",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
+  {
+    name: "scienceBigs",
+    dates: "time4",
+    age_group: "bigs",
+    type: "discovery",
+    spots: rand(10..50)
+  },
 
-  4.times{ |index|
-    rand_num = rand(10)
-    if rand_num <= 5
-      registrations[:"time#{index+1}"][rand_num] = true
-    end
-  }
+)
 
-  return registrations
-end
-
-10.times do
-  ages = [rand(5..10), rand(5..10)]
-  lengths = [30, 45, 60, 90, 120]
-  times = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"]
-  activity_list << {
-    name: Faker::Movies::HarryPotter.spell,
-    minimum_age: ages.min,
-    maximum_age: ages.max,
-    length: lengths[rand(lengths.length)],
-    activity_img: emojis[rand(180)],
-    capacity: 10,
-    cost: rand(20..100),
-    description: Faker::Movies::HarryPotter.quote,
-    location: Faker::Movies::HarryPotter.location,
-    leader: Faker::Movies::HarryPotter.character,
-    time: times[rand(times.length)]
-  }
-end
-
-500.times do
-  signup_list << {
-    activity_id: rand(1..10),
-    camper_id: rand(1..100),
-  }
-end
-
-100.times do
+20.times do
 
   camper_list << {
     username: Faker::Twitter.screen_name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    age: Faker::Number.within(range: 5..10),
-    profile_img: emojis[rand(180)],
-    registrations: randomizeRegistrations
+    age: Faker::Number.within(range: 5..10)
   }
 end
 
-
 Camper.create!(camper_list)
-Activity.create!(activity_list)
-Signup.create!(signup_list)
