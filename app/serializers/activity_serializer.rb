@@ -1,7 +1,6 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :id, :name, :minimum_age, :maximum_age, :length, :activity_img, :capacity, :cost, :description, :location
+  attributes :id, :name, :cost, :dates, :age_group, :activity_type, :spots
 
   has_many :campers
-  has_many :signups
 
 end

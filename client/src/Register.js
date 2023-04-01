@@ -9,12 +9,6 @@ function Register(){
       first_name: "",
       last_name: "",
       age: 5,
-      registrations: {
-        time1: [false, false, false, false, false ,false],
-        time2: [false, false, false, false, false ,false],
-        time3: [false, false, false, false, false ,false],
-        time4: [false, false, false, false, false ,false]
-        }
     }
   )
 
