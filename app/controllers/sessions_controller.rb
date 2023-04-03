@@ -7,4 +7,13 @@ class SessionsController < ApplicationController
     render json: camper
   end
 
+  def destroy
+    if session[:camper_id]
+      session.delete :camper_id
+      head :no_content
+    else
+      render json: {errors: ["no user logged in"]}, status: :unauthorized
+    end
+  end
+
 end

@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import Home from './Home';
 import NavBar from './NavBar';
 import LoginSignUp from './LoginSignUp';
@@ -15,17 +15,20 @@ import Registrations from './Registrations';
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
 
+  const navigate = useNavigate()
+
   function onLogout(){
     fetch('/logout', {method: "DELETE"}).then((r)=>{
       if (r.ok){
+        navigate('/')
         setCurrentUser(null)
+        
       }
     })
   }
 
   function onLogin(user){
     setCurrentUser(user)
-    console.log("current user set to: ", user)
   }
 
   return (

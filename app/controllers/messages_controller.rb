@@ -12,7 +12,11 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.create(message_params)
-    render json: message, status: :created
+    if message.valid?
+      render json: message, status: :created
+    else
+      render json: {errors: message.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
