@@ -12,11 +12,11 @@ class CampersController < ApplicationController
 
   def create
     camper = Camper.create(camper_params)
-    if user.valid?
+    if camper.valid?
       session[:camper_id]= camper.id
       render json: camper, status: :created
     else
-      render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
+      render json: {errors: camper.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

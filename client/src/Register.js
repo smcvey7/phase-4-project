@@ -1,16 +1,28 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function Register(){
-  const [userInfo, setUserInfo] = useState(
-    {
+  const [userInfo, setUserInfo] = useState({
       username: "",
       password: "",
       password_confirmation: "",
       first_name: "",
       last_name: "",
-      age: 5,
-    }
-  )
+      age: 5
+    })
+
+  function resetUserInfo(){
+    setUserInfo({
+      username: "",
+      password: "",
+      password_confirmation: "",
+      first_name: "",
+      last_name: "",
+      age: 5
+    })
+  }
+
+  const navigate = useNavigate()
 
   function handleChange(e){
     console.log(e.target)
@@ -26,7 +38,7 @@ function Register(){
     createUser()
   }
 
-  function createUser(userInfo){
+  function createUser(){
     fetch('/campers', {
       method: "POST",
       headers: {
@@ -37,8 +49,8 @@ function Register(){
     .then((r)=>r.json())
     .then((user)=>onLogin(user))
 
-    // resetUserData()
-    // navigate("/")
+    resetUserInfo()
+    navigate("/login")
   }
 
   function onLogin(user){
