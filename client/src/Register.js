@@ -61,18 +61,20 @@ function Register(){
   return(
     <div>
       <h2>Register</h2>
-      {errors ? <ul className="errors">
+      <div className="flexContainer horizontal spaceAround">
+        <form onSubmit={handleSubmit}>
+          Username:<br/><input name="username" value={userInfo.username} onChange={handleChange} /><br/>
+          Password:<br/><input type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
+          Confirm password:<br/><input type="password" name="password_confirmation" value={userInfo.password_confirmation} onChange={handleChange} /><br/>
+          Child first name:<br/><input name="first_name" value={userInfo.first_name} onChange={handleChange} /><br/>
+          Child last name:<br/><input name="last_name" value={userInfo.last_name} onChange={handleChange} /><br/>
+          Age:<br/><input type="number" min="5" max="10" name="age" value={userInfo.age} onChange={handleChange} /><br/>
+          <input type="submit"/>
+        </form>
+        {errors ? <ul className="errors">
         {errors.map((error)=><li>{error}</li>)}
       </ul> : null}
-      <form onSubmit={handleSubmit}>
-        Username:<br/><input name="username" value={userInfo.username} onChange={handleChange} /><br/>
-        Password:<br/><input type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
-        Confirm password:<br/><input type="password" name="password_confirmation" value={userInfo.password_confirmation} onChange={handleChange} /><br/>
-        Child first name:<br/><input name="first_name" value={userInfo.first_name} onChange={handleChange} /><br/>
-        Child last name:<br/><input name="last_name" value={userInfo.last_name} onChange={handleChange} /><br/>
-        Age:<br/><input type="number" min="5" max="10" name="age" value={userInfo.age} onChange={handleChange} /><br/>
-        <input type="submit"/>
-      </form>
+      </div>
     </div>
   )
 }
