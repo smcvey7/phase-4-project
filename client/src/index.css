@@ -31,10 +31,21 @@ code {
   justify-content: space-around
 }
 
+.spaceBetween{
+  justify-content: space-between;
+}
+
 h4{
   text-align: center;
 }
 
+.headerMargin{
+  margin: 5px 0px 5px 10px;
+}
+
+.contentRight{
+  text-align: right;
+}
 
 /* Navbar container */
 .navbar {

@@ -35,8 +35,8 @@ function App() {
     <div id='app'>
       <div id='heading' className='flexContainer horizontal'>
         <div id='title' className='flexContainer vertical'>
-          <h1>Scamps</h1>
-          <h3>Salem Camps</h3>
+          <h1 className='headerMargin'>Scamps</h1>
+          <h3 className='headerMargin'>Salem Camps</h3>
         </div>
         <Welcome currentUser={currentUser} onLogout={onLogout} />
       </div>

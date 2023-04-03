@@ -33,8 +33,9 @@ function Contact(){
     })
     .then((r)=>{
       if (r.ok){
-        setErrors(["Message sent"])
+        alert("Your message has been sent")
         resetFormData()
+        setErrors(null)
       }else{
         r.json().then((error_list)=>setErrors(error_list.errors))
       }
@@ -45,14 +46,16 @@ function Contact(){
   return(
     <div>
       <h2>Contact</h2>
-      {errors ? <ul>
-        {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
-      </ul> : null}
-      <form onSubmit={handleSubmit}>
-        email:<br/><input name="contact" value={formData.contact} onChange={handleChange} /><br/>
-        message:<br/><textarea name='content'  value={formData.content} onChange={handleChange} /><br/>
-        <input type="submit"/>
-      </form>
+      <div className="flexContainer horizontal spaceAround">
+        <form onSubmit={handleSubmit}>
+          email:<br/><input name="contact" value={formData.contact} onChange={handleChange} /><br/>
+          message:<br/><textarea name='content'  value={formData.content} onChange={handleChange} /><br/>
+          <input type="submit"/>
+        </form>
+        {errors ? <ul>
+          {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
+        </ul> : <ul/>}
+      </div>
     </div>
   )
 }

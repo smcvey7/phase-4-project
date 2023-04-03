@@ -5,11 +5,11 @@ function Welcome({ currentUser, onLogout }){
   console.log(currentUser)
   return(
     <div>
+      <div></div>
       {currentUser ?
-        <div>
-          <em>Welcome, {currentUser.first_name} </em><br/>
-          <NavLink to='/registrations'>My registrations</NavLink><br/>
-          <NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink>
+        <div className="flexContainer vertical spaceBetween contentRight">
+          <em>Welcome, {currentUser.first_name} </em><NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink><br/>
+          <NavLink to='/registrations'>My registrations</NavLink>
         </div>:
         <div>
           <NavLink className="welcomeLink" to="/login">Log in</NavLink>
