@@ -7,6 +7,9 @@ function LoginSignUp({ onLogin }){
     username: "",
     password: ""
   })
+
+  const [errors, setErrors]=useState([])
+
   const navigate = useNavigate();
 
   function resetUserData(){
@@ -29,6 +32,10 @@ function LoginSignUp({ onLogin }){
 
   function handleLogin(e){
     e.preventDefault()
+    if (userInfo.username === "" || userInfo.password === ""){
+      setErrors("username/password cannot be blank")
+      return null
+    }
     fetch('/login', {
       method: "POST",
       headers: {
@@ -36,11 +43,20 @@ function LoginSignUp({ onLogin }){
       },
       body: JSON.stringify(userInfo)
     })
-    .then((r)=>r.json())
-    .then((user)=>onLogin(user))
-
-    resetUserData()
-    navigate("/")
+    .then((r)=>{
+      if (r.ok){
+        r.json().then((user)=>{
+          onLogin(user)
+          resetUserData()
+          navigate("/")
+        })
+      }else{
+        r.json().then((error_list)=>{
+          setErrors(error_list.error)
+          console.log(error_list.error)
+        })
+            }
+    })
   }
 
   function handleNewAccount(e){
@@ -58,6 +74,7 @@ function LoginSignUp({ onLogin }){
       {hasAccount ?
         <div>
           <h3>Log in</h3>
+          <ul><li className="errors">{errors}</li></ul>
           <form onSubmit={handleLogin} >
             Username:<br/><input autoComplete="username" autoCapitalize="none" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
             Password:<br/><input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>

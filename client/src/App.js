@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Home from './Home';
 import NavBar from './NavBar';
@@ -16,6 +16,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
 
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    fetch('/me').then((r)=>{
+      if (r.ok){
+        r.json().then((user)=>setCurrentUser(user))
+      }
+    })
+  }, [])
 
   function onLogout(){
     fetch('/logout', {method: "DELETE"}).then((r)=>{

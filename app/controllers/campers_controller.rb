@@ -6,8 +6,9 @@ class CampersController < ApplicationController
   end
 
   def show
-    camper = Camper.find_by(id: params[:id])
-    render json: camper
+    return render json: {error: "unauthorized"}, status: :unauthorized unless session[:camper_id]
+    camper = Camper.find_by(id: session[:camper_id])
+    render json: camper, status: :created
   end
 
   def create
