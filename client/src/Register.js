@@ -11,6 +11,8 @@ function Register(){
       age: 5
     })
 
+  const [errors, setErrors]=useState(null)
+
   function resetUserInfo(){
     setUserInfo({
       username: "",
@@ -25,12 +27,10 @@ function Register(){
   const navigate = useNavigate()
 
   function handleChange(e){
-    console.log(e.target)
     setUserInfo({
       ...userInfo,
       [e.target.name]: e.target.value
     })
-    console.log(userInfo)
   }
 
   function handleSubmit(e){
@@ -47,19 +47,23 @@ function Register(){
       body: JSON.stringify(userInfo)
     })
     .then((r)=>r.json())
-    .then((user)=>onLogin(user))
+    .then((user_errors)=>{
+      console.log("user_errors", user_errors)
+      if (user_errors.username){
+        resetUserInfo()
+        navigate("/login")
+      }else
+        setErrors(user_errors.errors)
+    })
 
-    resetUserInfo()
-    navigate("/login")
-  }
-
-  function onLogin(user){
-    console.log(user, "logged in")
   }
   
   return(
     <div>
       <h2>Register</h2>
+      {errors ? <ul className="errors">
+        {errors.map((error)=><li>{error}</li>)}
+      </ul> : null}
       <form onSubmit={handleSubmit}>
         Username:<br/><input name="username" value={userInfo.username} onChange={handleChange} /><br/>
         Password:<br/><input type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
