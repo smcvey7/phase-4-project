@@ -45,7 +45,6 @@ function LoginSignUp({ onLogin }){
 
   function handleNewAccount(e){
     e.preventDefault()
-    console.log("creating account", userInfo)
     resetUserData()
     setHasAccount(true)
   }
