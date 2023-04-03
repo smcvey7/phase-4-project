@@ -46,16 +46,14 @@ function Register(){
       },
       body: JSON.stringify(userInfo)
     })
-    .then((r)=>r.json())
-    .then((user_errors)=>{
-      console.log("user_errors", user_errors)
-      if (user_errors.username){
+    .then((r)=>{
+      if (r.ok){
         resetUserInfo()
         navigate("/login")
-      }else
-        setErrors(user_errors.errors)
+      }else{
+        r.json().then((error_list)=>setErrors(error_list.errors))
+            }
     })
-
   }
   
   return(
@@ -63,17 +61,17 @@ function Register(){
       <h2>Register</h2>
       <div className="flexContainer horizontal spaceAround">
         <form onSubmit={handleSubmit}>
-          Username:<br/><input name="username" value={userInfo.username} onChange={handleChange} /><br/>
-          Password:<br/><input type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
-          Confirm password:<br/><input type="password" name="password_confirmation" value={userInfo.password_confirmation} onChange={handleChange} /><br/>
+          Username:<br/><input name="username" autoComplete="username" value={userInfo.username} onChange={handleChange} /><br/>
+          Password:<br/><input type="password" autoComplete="new-password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
+          Confirm password:<br/><input type="password" autoComplete="new-password" name="password_confirmation" value={userInfo.password_confirmation} onChange={handleChange} /><br/>
           Child first name:<br/><input name="first_name" value={userInfo.first_name} onChange={handleChange} /><br/>
           Child last name:<br/><input name="last_name" value={userInfo.last_name} onChange={handleChange} /><br/>
           Age:<br/><input type="number" min="5" max="10" name="age" value={userInfo.age} onChange={handleChange} /><br/>
           <input type="submit"/>
         </form>
         {errors ? <ul className="errors">
-        {errors.map((error)=><li>{error}</li>)}
-      </ul> : null}
+        {errors.map((error)=><li key={error}>{error}</li>)}
+      </ul> : <ul/>}
       </div>
     </div>
   )
