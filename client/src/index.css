@@ -114,3 +114,7 @@ a.welcomeLink{
   color: red;
   font-size: 8px;
 }
+
+#moreInfo{
+  background-color: rgba(162, 223, 247, 0.418);
+}

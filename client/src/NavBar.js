@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 function NavBar(){
   return(
-    <div id='navBar' className='flexContainer horizontal navbar'>
+    <div id='navBar' className='flexContainer horizontal navbar spaceAround'>
         <NavLink className="navLinks" to="/" >Home</NavLink>
         <div className='dropdown'>
           <button className='dropbtn'>Ages 5-7
