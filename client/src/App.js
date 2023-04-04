@@ -17,22 +17,21 @@ function App() {
   const [activities, setActivities]= useState(null)
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    Promise.all([
-      fetch('/me'),
-      fetch('/activities')
-    ])
-    .then(([resMe, resActivities])=>
-      Promise.all([resMe.json(), resActivities.json()])
-    )
-    .then(([dataMe, dataActivities])=>{
-      if (dataMe.ok){
-        dataMe.json().then((user)=>setCurrentUser(user))
-      }
-      setActivities(dataActivities)
-      console.log(currentUser, activities)
-    })
 
+  useEffect(()=>{
+    fetch('/me')
+    .then((r)=>{
+      if (r.ok){
+        r.json()
+        .then((user)=>setCurrentUser(user))
+      }
+    })
+  }, [])
+
+  useEffect(()=>{
+    fetch('/activities')
+    .then((r)=>r.json())
+    .then((data)=>setActivities(data))
   }, [])
 
   function onLogout(){
