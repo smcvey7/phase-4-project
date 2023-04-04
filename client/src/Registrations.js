@@ -15,7 +15,8 @@ function Registrations({currentUser, activities}){
 
   const [formData, setFormData] = useState(userRegistrations)
 
-  function createOptions(time, ageGroup){
+  function createOptions(time){
+    const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
     const options = activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
         return <option value={activity.id}>{activity.name}</option>
@@ -39,41 +40,25 @@ function Registrations({currentUser, activities}){
         
       </ul>
       <form>
-        Test:
-          <select name="test">
-            {createOptions("time1", "bigs")}
-          </select><br/>
         6/5-16:
           <select name="time1" value={formData.time1} onChange={handleChange}>
             <option value="none">None</option>
-            <option value="basicSkillsLittles">Basic Skills</option>
-            <option value="soccerLittles">Soccer</option>
-            <option value="baseballLittles">Baseball</option>
-            <option value="trackLittles">Track</option>
+            {createOptions("time1")}
           </select><br/>
         6/19-30:
         <select name="time2" value={formData.time2} onChange={handleChange}>
             <option value="none">None</option>
-            <option value="basicSkillsLittles">Basic Skills</option>
-            <option value="soccerLittles">Soccer</option>
-            <option value="baseballLittles">Baseball</option>
-            <option value="trackLittles">Track</option>
+            {createOptions("time2")}
           </select><br/>
         7/3-14:
         <select name="time3" value={formData.time3} onChange={handleChange}>
             <option value="none">None</option>
-            <option value="basicSkillsLittles">Basic Skills</option>
-            <option value="soccerLittles">Soccer</option>
-            <option value="baseballLittles">Baseball</option>
-            <option value="trackLittles">Track</option>
+            {createOptions("time3")}
           </select><br/>
         7/17-28:
         <select name="time4" value={formData.time4} onChange={handleChange}>
             <option value="none">None</option>
-            <option value="basicSkillsLittles">Basic Skills</option>
-            <option value="soccerLittles">Soccer</option>
-            <option value="baseballLittles">Baseball</option>
-            <option value="trackLittles">Track</option>
+            {createOptions("time4")}
           </select><br/>
       </form>
     </div> :
