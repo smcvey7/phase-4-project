@@ -2,24 +2,29 @@ import React, {useState} from "react";
 
 function Registrations({currentUser, activities}){
 
-  const userRegistrations = currentUser ? {
+  const [formData, setFormData] = useState(currentUser ? {
     camper_id: currentUser.id,
+    registrations: findRegistrations()
+  }: null)
 
-  } :{
-    camper_id: null,
-    time1: "none",
-    time2: "none",
-    time3: "none",
-    time4: "none"
+    function findRegistrations(){
+      const registrations = {
+        time1: "none",
+        time2: "none",
+        time3: "none",
+        time4: "none"
+      }
+      currentUser.activities.map((activity)=>{
+        registrations[activity.dates] = activity.id 
+      })
+      return registrations
     }
-
-  const [formData, setFormData] = useState(userRegistrations)
 
   function createOptions(time){
     const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
     const options = activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
-        return <option value={activity.id}>{activity.name} ({activity.spots} remaining)</option>
+        return <option key={activity.id} value={activity.id}>{activity.name} ({activity.spots} remaining)</option>
       }
     })
     return options
@@ -28,8 +33,12 @@ function Registrations({currentUser, activities}){
   function handleChange(e){
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      registrations: {
+        ...formData.registrations,
+        [e.target.name]: parseInt(e.target.value)
+      }
     })
+    console.log(formData)
   }
 
   return(
@@ -41,22 +50,22 @@ function Registrations({currentUser, activities}){
       </ul>
       <form>
         6/5-16:
-          <select name="time1" value={formData.time1} onChange={handleChange}>
+          <select name="time1" value={formData.registrations.time1} onChange={handleChange}>
             <option value="none">None</option>
             {createOptions("time1")}
           </select><br/>
         6/19-30:
-        <select name="time2" value={formData.time2} onChange={handleChange}>
+        <select name="time2" value={formData.registrations.time2} onChange={handleChange}>
             <option value="none">None</option>
             {createOptions("time2")}
           </select><br/>
         7/3-14:
-        <select name="time3" value={formData.time3} onChange={handleChange}>
+        <select name="time3" value={formData.registrations.time3} onChange={handleChange}>
             <option value="none">None</option>
             {createOptions("time3")}
           </select><br/>
         7/17-28:
-        <select name="time4" value={formData.time4} onChange={handleChange}>
+        <select name="time4" value={formData.registrations.time4} onChange={handleChange}>
             <option value="none">None</option>
             {createOptions("time4")}
           </select><br/>
