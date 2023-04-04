@@ -26,7 +26,7 @@ function Registrations({currentUser}){
       </ul>
       <form>
         6/5-16:
-          <select name="time1" value={formData.time1} defaultValue="none" onChange={handleChange}>
+          <select name="time1" value={formData.time1} onChange={handleChange}>
             <option value="none">None</option>
             <option value="basicSkillsLittles">Basic Skills</option>
             <option value="soccerLittles">Soccer</option>
@@ -34,7 +34,7 @@ function Registrations({currentUser}){
             <option value="trackLittles">Track</option>
           </select><br/>
         6/19-30:
-        <select name="time2" value={formData.time2} defaultValue="none" onChange={handleChange}>
+        <select name="time2" value={formData.time2} onChange={handleChange}>
             <option value="none">None</option>
             <option value="basicSkillsLittles">Basic Skills</option>
             <option value="soccerLittles">Soccer</option>
@@ -42,7 +42,7 @@ function Registrations({currentUser}){
             <option value="trackLittles">Track</option>
           </select><br/>
         7/3-14:
-        <select name="time3" value={formData.time3} defaultValue="none" onChange={handleChange}>
+        <select name="time3" value={formData.time3} onChange={handleChange}>
             <option value="none">None</option>
             <option value="basicSkillsLittles">Basic Skills</option>
             <option value="soccerLittles">Soccer</option>
@@ -50,7 +50,7 @@ function Registrations({currentUser}){
             <option value="trackLittles">Track</option>
           </select><br/>
         7/17-28:
-        <select name="time4" value={formData.time4} defaultValue="none" onChange={handleChange}>
+        <select name="time4" value={formData.time4} onChange={handleChange}>
             <option value="none">None</option>
             <option value="basicSkillsLittles">Basic Skills</option>
             <option value="soccerLittles">Soccer</option>
