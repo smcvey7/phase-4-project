@@ -1,14 +1,28 @@
 import React, {useState} from "react";
 
-function Registrations({currentUser}){
+function Registrations({currentUser, activities}){
 
-  const [formData, setFormData] = useState({
+  const userRegistrations = currentUser ? {
+    camper_id: currentUser.id,
+
+  } :{
+    camper_id: null,
     time1: "none",
     time2: "none",
     time3: "none",
     time4: "none"
     }
-  )
+
+  const [formData, setFormData] = useState(userRegistrations)
+
+  function createOptions(time, ageGroup){
+    const options = activities.map((activity)=>{
+      if (activity.dates === time && activity.age_group === ageGroup){
+        return <option value={activity.id}>{activity.name}</option>
+      }
+    })
+    return options
+  }
 
   function handleChange(e){
     setFormData({
@@ -25,6 +39,10 @@ function Registrations({currentUser}){
         
       </ul>
       <form>
+        Test:
+          <select name="test">
+            {createOptions("time1", "bigs")}
+          </select><br/>
         6/5-16:
           <select name="time1" value={formData.time1} onChange={handleChange}>
             <option value="none">None</option>

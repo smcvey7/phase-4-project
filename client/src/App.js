@@ -14,15 +14,25 @@ import Registrations from './Registrations';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
-
+  const [activities, setActivities]= useState(null)
   const navigate = useNavigate()
 
   useEffect(()=>{
-    fetch('/me').then((r)=>{
-      if (r.ok){
-        r.json().then((user)=>setCurrentUser(user))
+    Promise.all([
+      fetch('/me'),
+      fetch('/activities')
+    ])
+    .then(([resMe, resActivities])=>
+      Promise.all([resMe.json(), resActivities.json()])
+    )
+    .then(([dataMe, dataActivities])=>{
+      if (dataMe.ok){
+        dataMe.json().then((user)=>setCurrentUser(user))
       }
+      setActivities(dataActivities)
+      console.log(currentUser, activities)
     })
+
   }, [])
 
   function onLogout(){
@@ -30,7 +40,6 @@ function App() {
       if (r.ok){
         navigate('/')
         setCurrentUser(null)
-        
       }
     })
   }
@@ -57,7 +66,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/registrations' element={<Registrations currentUser={currentUser} />} />
+        <Route path='/registrations' element={<Registrations activities={activities} currentUser={currentUser} />} />
       </Routes>
       </div>
     </div>

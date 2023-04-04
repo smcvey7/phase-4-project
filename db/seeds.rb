@@ -11,391 +11,391 @@ camper_list = []
 
 Activity.create([
   {
-    name: "basicSkillsLittles",
+    name: "Basic Skills",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "basicSkillsLittles",
+    name: "Basic Skills",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "basicSkillsLittles",
+    name: "Basic Skills",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "basicSkillsLittles",
+    name: "Basic Skills",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisLittles",
+    name: "Tennis",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisLittles",
+    name: "Tennis",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisLittles",
+    name: "Tennis",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisLittles",
+    name: "Tennis",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballLittles",
+    name: "Baseball",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballLittles",
+    name: "Baseball",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballLittles",
+    name: "Baseball",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballLittles",
+    name: "Baseball",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackLittles",
+    name: "Track",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackLittles",
+    name: "Track",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackLittles",
+    name: "Track",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackLittles",
+    name: "Track",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerLittles",
+    name: "Soccer",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerLittles",
+    name: "Soccer",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerLittles",
+    name: "Soccer",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerLittles",
+    name: "Soccer",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "artLittles",
+    name: "Art",
     dates: "time1",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artLittles",
+    name: "Art",
     dates: "time2",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artLittles",
+    name: "Art",
     dates: "time3",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artLittles",
+    name: "Art",
     dates: "time4",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceLittles",
+    name: "Science",
     dates: "time1",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceLittles",
+    name: "Science",
     dates: "time2",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceLittles",
+    name: "Science",
     dates: "time3",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceLittles",
+    name: "Science",
     dates: "time4",
     age_group: "littles",
     activity_type: "discovery",
     spots: rand(10..50)
   },{
-    name: "advancedSkillsBigs",
+    name: "Advanced Skills",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "advancedSkillsBigs",
+    name: "Advanced Skills",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "advancedSkillsBigs",
+    name: "Advanced Skills",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "advancedSkillsBigs",
+    name: "Advanced Skills",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisBigs",
+    name: "Tennis",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisBigs",
+    name: "Tennis",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisBigs",
+    name: "Tennis",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "tennisBigs",
+    name: "Tennis",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballBigs",
+    name: "Baseball",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballBigs",
+    name: "Baseball",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballBigs",
+    name: "Baseball",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "baseballBigs",
+    name: "Baseball",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackBigs",
+    name: "Track",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackBigs",
+    name: "Track",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackBigs",
+    name: "Track",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "trackBigs",
+    name: "Track",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerBigs",
+    name: "Soccer",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerBigs",
+    name: "Soccer",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerBigs",
+    name: "Soccer",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "soccerBigs",
+    name: "Soccer",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
     spots: rand(10..50)
   },
   {
-    name: "artBigs",
+    name: "Art",
     dates: "time1",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artBigs",
+    name: "Art",
     dates: "time2",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artBigs",
+    name: "Art",
     dates: "time3",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "artBigs",
+    name: "Art",
     dates: "time4",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceBigs",
+    name: "Science",
     dates: "time1",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceBigs",
+    name: "Science",
     dates: "time2",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceBigs",
+    name: "Science",
     dates: "time3",
     age_group: "bigs",
     activity_type: "discovery",
     spots: rand(10..50)
   },
   {
-    name: "scienceBigs",
+    name: "Science",
     dates: "time4",
     age_group: "bigs",
     activity_type: "discovery",
@@ -416,4 +416,4 @@ Activity.create([
   }
 end
 
-Camper.create!(camper_list)
+# Camper.create!(camper_list)
