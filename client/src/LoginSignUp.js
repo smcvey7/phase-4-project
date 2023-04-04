@@ -6,11 +6,8 @@ function LoginSignUp({ onLogin }){
     username: "",
     password: ""
   })
-
   const [errors, setErrors]=useState(null)
-
   const [isLoading, setIsLoading]=useState(false)
-
   const navigate = useNavigate();
 
   function resetUserData(){
@@ -36,6 +33,7 @@ function LoginSignUp({ onLogin }){
     setIsLoading(true)
     if (userInfo.username === "" || userInfo.password === ""){
       setErrors("username/password cannot be blank")
+      setIsLoading(false)
       return null
     }
     fetch('/login', {
@@ -46,11 +44,11 @@ function LoginSignUp({ onLogin }){
       body: JSON.stringify(userInfo)
     })
     .then((r)=>{
+      setIsLoading(false)
       if (r.ok){
         r.json().then((user)=>{
           onLogin(user)
           resetUserData()
-          setIsLoading(false)
           navigate("/")
         })
       }else{

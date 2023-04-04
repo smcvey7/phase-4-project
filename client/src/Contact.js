@@ -2,11 +2,12 @@ import React, {useState} from "react";
 
 function Contact(){
   const [formData, setFormData] = useState({
-    content: '',
-    contact: ''
+    message: '',
+    email: '',
+    name: ''
   })
-
   const [errors, setErrors] = useState(null)
+  const [isLoading, setIsLoading]=useState(false)
 
   function handleChange(e){
     setFormData({
@@ -17,13 +18,15 @@ function Contact(){
 
   function resetFormData(){
     setFormData({
-      content: '',
-      contact: ''
+      message: '',
+      email: '',
+      name: ''
     })
   }
 
   function handleSubmit(e){
     e.preventDefault()
+    setIsLoading(true)
     fetch('/messages', {
       method: "POST",
       headers: {
@@ -32,6 +35,7 @@ function Contact(){
       body: JSON.stringify(formData)
     })
     .then((r)=>{
+      setIsLoading(false)
       if (r.ok){
         alert("Your message has been sent")
         resetFormData()
@@ -48,9 +52,10 @@ function Contact(){
       <h2>Contact</h2>
       <div className="flexContainer horizontal spaceAround">
         <form onSubmit={handleSubmit}>
-          email:<br/><input name="contact" value={formData.contact} onChange={handleChange} /><br/>
-          message:<br/><textarea name='content'  value={formData.content} onChange={handleChange} /><br/>
-          <input type="submit"/>
+          name:<br/><input name="name" value={formData.contact} onChange={handleChange} /><br/>
+          email:<br/><input name="email" value={formData.contact} onChange={handleChange} /><br/>
+          message:<br/><textarea name='message'  value={formData.content} onChange={handleChange} /><br/>
+          <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
         {errors ? <ul>
           {errors.map((error) => <li className="errors" key={error}>{error}</li>)}

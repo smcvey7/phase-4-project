@@ -10,7 +10,7 @@ function Register(){
       last_name: "",
       age: 5
     })
-
+  const [isLoading, setIsLoading]=useState(false)
   const [errors, setErrors]=useState(null)
 
   function resetUserInfo(){
@@ -35,6 +35,7 @@ function Register(){
 
   function handleSubmit(e){
     e.preventDefault()
+    setIsLoading(true)
     createUser()
   }
 
@@ -54,6 +55,7 @@ function Register(){
         r.json().then((error_list)=>setErrors(error_list.errors))
             }
     })
+    setIsLoading(false)
   }
   
   return(
@@ -67,7 +69,7 @@ function Register(){
           Child first name:<br/><input name="first_name" value={userInfo.first_name} onChange={handleChange} /><br/>
           Child last name:<br/><input name="last_name" value={userInfo.last_name} onChange={handleChange} /><br/>
           Age:<br/><input type="number" min="5" max="10" name="age" value={userInfo.age} onChange={handleChange} /><br/>
-          <input type="submit"/>
+          <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
         {errors ? <ul className="errors">
         {errors.map((error)=><li key={error}>{error}</li>)}
