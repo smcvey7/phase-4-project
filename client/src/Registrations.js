@@ -19,7 +19,7 @@ function Registrations({currentUser, activities}){
     const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
     const options = activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
-        return <option value={activity.id}>{activity.name}</option>
+        return <option value={activity.id}>{activity.name} ({activity.spots} remaining)</option>
       }
     })
     return options
