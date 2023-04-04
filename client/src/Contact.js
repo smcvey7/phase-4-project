@@ -26,6 +26,7 @@ function Contact(){
 
   function handleSubmit(e){
     e.preventDefault()
+    setErrors(null)
     setIsLoading(true)
     fetch('/messages', {
       method: "POST",
@@ -52,14 +53,14 @@ function Contact(){
       <h2>Contact</h2>
       <div className="flexContainer horizontal spaceAround">
         <form onSubmit={handleSubmit}>
-          name:<br/><input name="name" value={formData.contact} onChange={handleChange} /><br/>
-          email:<br/><input name="email" value={formData.contact} onChange={handleChange} /><br/>
-          message:<br/><textarea name='message'  value={formData.content} onChange={handleChange} /><br/>
+          name:<br/><input name="name" value={formData.name} onChange={handleChange} /><br/>
+          email:<br/><input name="email" value={formData.email} onChange={handleChange} /><br/>
+          message:<br/><textarea name='message'  value={formData.message} onChange={handleChange} /><br/>
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
         {errors ? <ul>
           {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
-        </ul> : <ul/>}
+        </ul> : <div/>}
       </div>
     </div>
   )
