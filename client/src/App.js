@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div id='app'>
-      <div id='heading' className='flexContainer horizontal'>
+      <div id='heading' className='flexContainer horizontal spaceBetween'>
         <div id='title' className='flexContainer vertical'>
           <h1 className='headerMargin'>Scamps</h1>
           <h3 className='headerMargin'>Salem Camps</h3>

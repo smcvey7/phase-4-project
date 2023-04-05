@@ -17,9 +17,12 @@ code {
   display: flex;
 }
 
+.activityBox{
+  width: 40%;
+}
+
 .horizontal{
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .vertical{
@@ -53,6 +56,37 @@ h4{
 
 .green{
   color: green;
+}
+
+.black{
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  width: 400px;
+  height: 230px;
+  z-index: 1;
+}
+
+.black:hover{
+  opacity: .6;
+}
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+}
+
+img{
+  width: 100%;
+  height: 80%;
+}
+
+.under{
+  position: absolute;
+  z-index: -1;
 }
 
 /* Navbar container */
@@ -135,5 +169,9 @@ a.welcomeLink{
 }
 
 #moreInfo{
-  background-color: rgba(162, 223, 247, 0.418);
+  color: white;
+}
+
+.blue{
+  background-color: #0327f6;
 }

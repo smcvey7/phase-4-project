@@ -6,16 +6,18 @@ function Contact(){
     email: '',
     name: ''
   })
+  // display errors from form validation
   const [errors, setErrors] = useState(null)
+  // indicate when loading in submit button
   const [isLoading, setIsLoading]=useState(false)
-
+  // update state when form changes
   function handleChange(e){
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
   }
-
+  
   function resetFormData(){
     setFormData({
       message: '',
@@ -45,7 +47,6 @@ function Contact(){
         r.json().then((error_list)=>setErrors(error_list.errors))
       }
     })
-    
   }
 
   return(
@@ -58,9 +59,11 @@ function Contact(){
           message:<br/><textarea name='message'  value={formData.message} onChange={handleChange} /><br/>
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
-        {errors ? <ul>
-          {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
-        </ul> : <div/>}
+        <div>
+          {errors ? <ul>
+            {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
+          </ul> : <></>}
+        </div>
       </div>
     </div>
   )
