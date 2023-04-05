@@ -1,11 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 function Registrations({currentUser, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
+  const [isUpdated, setIsUpdated] = useState(true)
   const [formData, setFormData] = useState({
-    camper_id: currentUser ? currentUser.id : null,
     registrations: findRegistrations()
   })
+
+  useEffect(()=>{
+    setFormData({
+      camper_id: currentUser ? currentUser.id : null,
+      registrations: findRegistrations()
+    })
+  }, [currentUser])
 
     function findRegistrations(){
       const registrations = {
@@ -27,7 +34,7 @@ function Registrations({currentUser, activities, updateActivities}){
     const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
     const options = activities ? activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
-        return <option key={activity.id} value={activity.id}>{activity.name} ({activity.spots} remaining)</option>
+        return <option key={activity.id} value={activity.id}>{activity.name}</option>
       }else return null
     }) : null
     return options
@@ -42,13 +49,12 @@ function Registrations({currentUser, activities, updateActivities}){
         [e.target.name]: value === "none" ? "none" : parseInt(value)
       }
     })
-    console.log(formData)
+    setIsUpdated(false)
   }
 
   function handleSubmit(e){
     e.preventDefault()
     setIsLoading(true)
-    console.log(formData)
     fetch('/signups', {
       method: "POST",
       headers: {
@@ -59,6 +65,7 @@ function Registrations({currentUser, activities, updateActivities}){
     .then((r)=>r.json())
     .then((data)=>updateActivities(data))
     setIsLoading(false)
+    setIsUpdated(true)
   }
 
   if (!currentUser) return <em>Please login to view registrations</em>
@@ -67,9 +74,7 @@ function Registrations({currentUser, activities, updateActivities}){
     currentUser ? 
     <div id="registrations">
       <h2>{currentUser.first_name}'s Registrations (age: {currentUser.age})</h2>
-      <ul>
-        
-      </ul>
+      {isUpdated ? <p className="green">Your registrations are up to date</p> : <p className="red">Registrations changed. Click update to save changes</p>}
       <form onSubmit={handleSubmit}>
         6/5-16:
           <select name="time1" value={formData.registrations.time1} onChange={handleChange}>

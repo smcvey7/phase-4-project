@@ -47,6 +47,14 @@ h4{
   text-align: right;
 }
 
+.red{
+  color: red;
+}
+
+.green{
+  color: green;
+}
+
 /* Navbar container */
 .navbar {
   overflow: hidden;

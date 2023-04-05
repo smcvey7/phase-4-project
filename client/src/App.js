@@ -18,7 +18,6 @@ function App() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    console.log("reloading current user")
     fetch('/me')
     .then((r)=>{
       if (r.ok){
@@ -29,7 +28,6 @@ function App() {
   }, [])
 
   useEffect(()=>{
-    console.log("reloading activities")
     fetch('/activities')
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
