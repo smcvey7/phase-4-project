@@ -56,7 +56,7 @@ function App() {
     <div id='app'>
       <div id='heading' className='flexContainer horizontal spaceBetween'>
         <div id='title' className='flexContainer vertical'>
-          <h1 className='headerMargin'>Scamps</h1>
+          <h1 id='siteName' className='headerMargin'>SCAMPS</h1>
           <h3 className='headerMargin'>Salem Camps</h3>
         </div>
         <Welcome camper={camper} onLogout={onLogout} />

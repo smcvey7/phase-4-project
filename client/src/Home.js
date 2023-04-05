@@ -11,11 +11,21 @@ function Home(){
       <div className="flexContainer horizontal spaceAround">
         <div className="activityBox">
           <h2>SPORT CAMPS</h2>
-          <img src="./img/soccer_5_7.jpeg" alt="sports camps" onClick={()=>navigate('/sports')} /><br/>
+          <div class="container">
+            <img src="./img/soccer_5_7.jpeg" alt="sports camps"  class="image"/>
+            <div class="overlay" onClick={()=>navigate('/discovery')}>
+              <div class="text" onClick={()=>navigate('/sports')}>LEARN MORE</div>
+            </div>
+          </div>
         </div>
         <div className="activityBox">
           <h2>DISCOVERY CAMPS</h2>
-          <img src="./img/science_5_7_3.jpeg" alt="discovery camps" onClick={()=>navigate('/discovery')} /><br/>
+          <div class="container">
+            <img src="./img/science_5_7_3.jpeg" alt="discovery camps"  class="image"/>
+            <div class="overlay" onClick={()=>navigate('/discovery')}>
+              <div class="text" >LEARN MORE</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
