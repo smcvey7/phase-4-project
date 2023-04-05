@@ -89,6 +89,15 @@ img{
   z-index: -1;
 }
 
+#contactForm{
+  width: 50%;
+}
+
+textarea{
+  width: 100%;
+  height: 100px;
+}
+
 /* Navbar container */
 .navbar {
   overflow: hidden;

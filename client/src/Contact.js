@@ -53,7 +53,7 @@ function Contact(){
     <div>
       <h2>Contact</h2>
       <div className="flexContainer horizontal spaceAround">
-        <form onSubmit={handleSubmit}>
+        <form id="contactForm" onSubmit={handleSubmit}>
           name:<br/><input name="name" value={formData.name} onChange={handleChange} /><br/>
           email:<br/><input name="email" value={formData.email} onChange={handleChange} /><br/>
           message:<br/><textarea name='message'  value={formData.message} onChange={handleChange} /><br/>
