@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-function Registrations({currentUser, activities, updateActivities}){
+function Registrations({camper, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
   const [formData, setFormData] = useState({
@@ -20,8 +20,8 @@ function Registrations({currentUser, activities, updateActivities}){
         time3: "none",
         time4: "none"
       }
-      if (currentUser){
-        currentUser.activities.map((activity)=>{
+      if (camper){
+        camper.activities.map((activity)=>{
           registrations[activity.dates] = activity.id 
           return null
         })
@@ -29,13 +29,13 @@ function Registrations({currentUser, activities, updateActivities}){
       return registrations
     }
     setFormData({
-      camper_id: currentUser ? currentUser.id : null,
+      camper_id: camper ? camper.id : null,
       registrations: findRegistrations()
     })
-  }, [currentUser])
+  }, [camper])
 
   function createOptions(time){
-    const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
+    const ageGroup = camper.age <= 7 ? "littles" : "bigs"
     const options = activities ? activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
         return <option key={activity.id} value={activity.id}>{activity.name}</option>
@@ -72,12 +72,12 @@ function Registrations({currentUser, activities, updateActivities}){
     setIsUpdated(true)
   }
 
-  if (!currentUser) return <em>Please login to view registrations</em>
+  if (!camper) return <em>Please login to view registrations</em>
 
   return(
-    currentUser ? 
+    camper ? 
     <div id="registrations">
-      <h2>{currentUser.first_name}'s Registrations (age: {currentUser.age})</h2>
+      <h2>{camper.first_name}'s Registrations (age: {camper.age})</h2>
       {isUpdated ? <p className="green">Your registrations are up to date</p> : <p className="red">Registrations changed. Click update to save changes</p>}
       <form onSubmit={handleSubmit}>
         6/5-16:

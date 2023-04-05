@@ -11,44 +11,43 @@ import Sports from './Sports';
 import Discovery from './Discovery';
 import Registrations from './Registrations';
 
-
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [camper, setCamper] = useState(null)
   const [activities, setActivities]= useState(null)
   const navigate = useNavigate()
-
+  // auto-login
   useEffect(()=>{
     fetch('/me')
     .then((r)=>{
       if (r.ok){
         r.json()
-        .then((user)=>setCurrentUser(user))
+        .then((user)=>setCamper(user))
       }
     })
   }, [])
-
+  // fetch activities
   useEffect(()=>{
     fetch('/activities')
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
   }, [])
-
+// delete session[:camper_id]
   function onLogout(){
     fetch('/logout', {method: "DELETE"}).then((r)=>{
       if (r.ok){
         navigate('/')
-        setCurrentUser(null)
+        setCamper(null)
       }
     })
   }
-
+// set state with user info
   function onLogin(user){
-    setCurrentUser(user)
+    setCamper(user)
   }
-
+// update user state after changing registrations
   function updateActivities(data){
-    setCurrentUser({
-      ...currentUser,
+    setCamper({
+      ...camper,
       activities: data
     })
   }
@@ -60,7 +59,7 @@ function App() {
           <h1 className='headerMargin'>Scamps</h1>
           <h3 className='headerMargin'>Salem Camps</h3>
         </div>
-        <Welcome currentUser={currentUser} onLogout={onLogout} />
+        <Welcome camper={camper} onLogout={onLogout} />
       </div>
       <NavBar/>
       <div id='body'>
@@ -71,7 +70,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/registrations' element={<Registrations activities={activities} currentUser={currentUser} updateActivities={updateActivities}/>} />
+        <Route path='/registrations' element={<Registrations activities={activities} camper={camper} updateActivities={updateActivities}/>} />
       </Routes>
       </div>
     </div>

@@ -12,6 +12,7 @@ function Register(){
     })
   const [isLoading, setIsLoading]=useState(false)
   const [errors, setErrors]=useState(null)
+  const navigate = useNavigate()
 
   function resetUserInfo(){
     setUserInfo({
@@ -24,8 +25,6 @@ function Register(){
     })
   }
 
-  const navigate = useNavigate()
-
   function handleChange(e){
     setUserInfo({
       ...userInfo,
@@ -35,11 +34,11 @@ function Register(){
 
   function handleSubmit(e){
     e.preventDefault()
-    setIsLoading(true)
     createUser()
   }
 
   function createUser(){
+    setIsLoading(true)
     fetch('/campers', {
       method: "POST",
       headers: {
