@@ -17,8 +17,8 @@ function App() {
   const [activities, setActivities]= useState(null)
   const navigate = useNavigate()
 
-
   useEffect(()=>{
+    console.log("reloading current user")
     fetch('/me')
     .then((r)=>{
       if (r.ok){
@@ -29,6 +29,7 @@ function App() {
   }, [])
 
   useEffect(()=>{
+    console.log("reloading activities")
     fetch('/activities')
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
@@ -45,6 +46,13 @@ function App() {
 
   function onLogin(user){
     setCurrentUser(user)
+  }
+
+  function updateActivities(data){
+    setCurrentUser({
+      ...currentUser,
+      activities: data
+    })
   }
 
   return (
@@ -65,7 +73,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/registrations' element={<Registrations activities={activities} currentUser={currentUser} />} />
+        <Route path='/registrations' element={<Registrations activities={activities} currentUser={currentUser} updateActivities={updateActivities}/>} />
       </Routes>
       </div>
     </div>

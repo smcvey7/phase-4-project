@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-function Registrations({currentUser, activities}){
+function Registrations({currentUser, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
-  const [formData, setFormData] = useState(currentUser ? {
-    camper_id: currentUser.id,
+  const [formData, setFormData] = useState({
+    camper_id: currentUser ? currentUser.id : null,
     registrations: findRegistrations()
-  }: null)
+  })
 
     function findRegistrations(){
       const registrations = {
@@ -14,29 +14,32 @@ function Registrations({currentUser, activities}){
         time3: "none",
         time4: "none"
       }
-      currentUser.activities.map((activity)=>{
-        registrations[activity.dates] = activity.id 
-        return null
-      })
+      if (currentUser){
+        currentUser.activities.map((activity)=>{
+          registrations[activity.dates] = activity.id 
+          return null
+        })
+      }
       return registrations
     }
 
   function createOptions(time){
     const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
-    const options = activities.map((activity)=>{
+    const options = activities ? activities.map((activity)=>{
       if (activity.dates === time && activity.age_group === ageGroup){
         return <option key={activity.id} value={activity.id}>{activity.name} ({activity.spots} remaining)</option>
       }else return null
-    })
+    }) : null
     return options
   }
 
   function handleChange(e){
+    const value = e.target.value
     setFormData({
       ...formData,
       registrations: {
         ...formData.registrations,
-        [e.target.name]: parseInt(e.target.value)
+        [e.target.name]: value === "none" ? "none" : parseInt(value)
       }
     })
     console.log(formData)
@@ -45,6 +48,7 @@ function Registrations({currentUser, activities}){
   function handleSubmit(e){
     e.preventDefault()
     setIsLoading(true)
+    console.log(formData)
     fetch('/signups', {
       method: "POST",
       headers: {
@@ -53,7 +57,8 @@ function Registrations({currentUser, activities}){
       body: JSON.stringify(formData)
     })
     .then((r)=>r.json())
-    .then((data)=>console.log(data))
+    .then((data)=>updateActivities(data))
+    setIsLoading(false)
   }
 
   if (!currentUser) return <em>Please login to view registrations</em>
