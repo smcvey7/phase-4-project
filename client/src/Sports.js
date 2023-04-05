@@ -47,8 +47,8 @@ function Sports(){
           </div>
         </div>
       </div>
-      <div id="moreInfo" className={activity ? "blue" : null}>
-      <ActivityInfo activity={activity} />
+      <div id="moreInfo" className={activity ? "blue flexContainer vertical spaceAround" : null}>
+        <ActivityInfo activity={activity} />
       </div>
       <h3 id="sportsBigs">Ages 8-10</h3>
       <div className="flexContainer vertical">

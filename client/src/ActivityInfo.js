@@ -18,9 +18,7 @@ function ActivityInfo({activity}){
   }
 
   return(
-    <div>
-      <p>{descriptions[activity]}</p>
-    </div>
+      <p className="activityInfo">{descriptions[activity]}</p>
   )
 }
 

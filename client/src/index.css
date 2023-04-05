@@ -93,6 +93,9 @@ img{
   width: 40%;
 }
 
+img:hover{
+  -webkit-filter: brightness(70%);}
+
 .errors{
   width: 30%;
   color: red;
@@ -180,8 +183,21 @@ a.welcomeLink{
 
 #moreInfo{
   color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+p.activityInfo{
+  margin-bottom: 0px;
+  height: auto;
+
 }
 
 .blue{
   background-color: #0327f6;
+  height: 150px;
+}
+
+.centered{
+  align-content: center;
 }

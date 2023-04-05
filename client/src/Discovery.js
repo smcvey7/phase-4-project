@@ -37,8 +37,8 @@ function Discovery(){
           </div>
         </div>
       </div>
-      <div id="moreInfo" className={activity ? "blue" : null}>
-      <ActivityInfo activity={activity} />
+      <div id="moreInfo" className={activity ? "blue flexContainer vertical spaceAround" : null}>
+        <ActivityInfo activity={activity} />
       </div>
       <div>
         <h3 id="discoveryBigs">Ages 8-10</h3>
