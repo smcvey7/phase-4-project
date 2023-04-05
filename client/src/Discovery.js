@@ -27,7 +27,7 @@ function Discovery(){
             <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>Science</h3>
-              <img src="./img/science_5_7_3.jpeg" alt="science" name="scienceLittles" onClick={onSelect} /><br/>
+              <img src="./img/science_5_7_2.jpeg" alt="science" name="scienceLittles" onClick={onSelect} /><br/>
             </div>
               <div className="activityBox">
                 <h3>Art</h3>
