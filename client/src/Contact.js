@@ -53,16 +53,15 @@ function Contact(){
     <div>
       <h2>Contact</h2>
       <div className="flexContainer horizontal spaceAround">
-        <form id="contactForm" onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleSubmit}>
           name:<br/><input name="name" value={formData.name} onChange={handleChange} /><br/>
           email:<br/><input name="email" value={formData.email} onChange={handleChange} /><br/>
           message:<br/><textarea name='message'  value={formData.message} onChange={handleChange} /><br/>
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
-        <div>
-          {errors ? <ul>
-            {errors.map((error) => <li className="errors" key={error}>{error}</li>)}
-          </ul> : <></>}
+        <div className="errors">
+          {errors ? 
+            <ul>{errors.map((error) => <li key={error}>{error}</li>)}</ul> : null}
         </div>
       </div>
     </div>

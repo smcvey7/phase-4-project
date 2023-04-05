@@ -61,7 +61,7 @@ function Register(){
     <div>
       <h2>Register</h2>
       <div className="flexContainer horizontal spaceAround">
-        <form onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleSubmit}>
           Username:<br/><input name="username" autoComplete="username" value={userInfo.username} onChange={handleChange} /><br/>
           Password:<br/><input type="password" autoComplete="new-password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
           Confirm password:<br/><input type="password" autoComplete="new-password" name="password_confirmation" value={userInfo.password_confirmation} onChange={handleChange} /><br/>
@@ -70,9 +70,10 @@ function Register(){
           Age:<br/><input type="number" min="5" max="10" name="age" value={userInfo.age} onChange={handleChange} /><br/>
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>
-        {errors ? <ul className="errors">
-        {errors.map((error)=><li key={error}>{error}</li>)}
-      </ul> : <ul/>}
+        <div className="errors">
+          {errors ?
+            <ul>{errors.map((error)=><li key={error}>{error}</li>)}</ul> : null}
+        </div>
       </div>
     </div>
   )

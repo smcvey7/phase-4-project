@@ -61,14 +61,16 @@ function LoginSignUp({ onLogin }){
 
   return (
     <div className="login">
-      <div>
-        <h3>Log in</h3>
-        {errors ? <ul><li className="errors">{errors}</li></ul> : <div/>}
-        <form onSubmit={handleLogin} >
+      <h3>Log in</h3>
+      <div className="flexContainer horizontal spaceAround">
+        <form id="form" onSubmit={handleLogin} >
           Username:<br/><input autoComplete="username" autoCapitalize="none" name="username" value={userInfo.username} onChange={handleChange} ></input><br/>
           Password:<br/><input autoComplete="current-password" type="password" name="password" value={userInfo.password} onChange={handleChange} /><br/>
           <button type="submit" >{isLoading ? "Loading..." : "Submit"}</button>
         </form>
+        <div className="errors">
+          {errors ? <ul><li>{errors}</li></ul> : <div/>}
+        </div>
       </div>
     </div>
   )
