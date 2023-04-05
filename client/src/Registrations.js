@@ -4,16 +4,15 @@ function Registrations({currentUser, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
   const [formData, setFormData] = useState({
-    registrations: findRegistrations()
+    registrations: {
+      time1: "none",
+      time2: "none",
+      time3: "none",
+      time4: "none"
+    }
   })
 
   useEffect(()=>{
-    setFormData({
-      camper_id: currentUser ? currentUser.id : null,
-      registrations: findRegistrations()
-    })
-  }, [currentUser])
-
     function findRegistrations(){
       const registrations = {
         time1: "none",
@@ -29,6 +28,11 @@ function Registrations({currentUser, activities, updateActivities}){
       }
       return registrations
     }
+    setFormData({
+      camper_id: currentUser ? currentUser.id : null,
+      registrations: findRegistrations()
+    })
+  }, [currentUser])
 
   function createOptions(time){
     const ageGroup = currentUser.age <= 7 ? "littles" : "bigs"
