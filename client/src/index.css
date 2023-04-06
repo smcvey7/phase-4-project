@@ -1,16 +1,20 @@
 body {
   margin: 0;
+  margin-bottom: 200px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #2D6537; */
 }
 
 h1, h2, h3.red{
   margin-left: 10px;
 }
+
+/* #changeRegistrations{
+  margin-top: 0px;
+} */
 
 #siteName{
   font-size: 80px;
@@ -220,7 +224,8 @@ p.activityInfo{
 
 .image {
   display: block;
-  width: 100%; height: 250px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
 }
 

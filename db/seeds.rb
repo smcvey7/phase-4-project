@@ -15,391 +15,447 @@ Activity.create([
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Basic Skills",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Basic Skills",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Basic Skills",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time1",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time2",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time3",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time4",
     age_group: "littles",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time1",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time2",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time3",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time4",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time1",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time2",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time3",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time4",
     age_group: "littles",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },{
     name: "Advanced Skills",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Advanced Skills",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Advanced Skills",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Advanced Skills",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Tennis",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Baseball",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Track",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time1",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time2",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time3",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Soccer",
     dates: "time4",
     age_group: "bigs",
     activity_type: "sports",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time1",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time2",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time3",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Art",
     dates: "time4",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time1",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time2",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time3",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   },
   {
     name: "Science",
     dates: "time4",
     age_group: "bigs",
     activity_type: "discovery",
-    spots: rand(10..50)
+    spots: rand(10..50),
+    cost: [100, 150, 200, 250][rand(0..3)]
   }
 ]
 )

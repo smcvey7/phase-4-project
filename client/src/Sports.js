@@ -13,7 +13,7 @@ function Sports(){
   function scrollToInfo(){
     const moreInfo = document.getElementById("moreInfo")
 
-    moreInfo.scrollIntoView({ behavior: "smooth", block: "end", block: "center" })
+    moreInfo.scrollIntoView({ behavior: "smooth", block: "center" })
   }
 
   return(
@@ -25,19 +25,19 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>BASIC SKILLS</h3>
-              <div class="container">
-                <img src="./img/Basic_5_7_2.png" alt="basic skills"  class="image"/>
-                <div class="overlay" name="basicSkillsLittles" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+              <div className="container">
+                <img src="./img/Basic_5_7_2.png" alt="basic skills"  className="image"/>
+                <div className="overlay" name="basicSkillsLittles" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
-              <div class="container">
-                <img src="./img/Track_5_7_2.png" alt="track"  class="image"/>
-                <div class="overlay" name="trackLittles" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+              <div className="container">
+                <img src="./img/Track_5_7_2.png" alt="track"  className="image"/>
+                <div className="overlay" name="trackLittles" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -46,19 +46,19 @@ function Sports(){
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
-            <div class="container">
-                <img src="./img/soccer_5_7.jpeg"  alt="soccer"  class="image"/>
-                <div class="overlay" name="soccerLittles" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+            <div className="container">
+                <img src="./img/soccer_5_7.jpeg"  alt="soccer"  className="image"/>
+                <div className="overlay" name="soccerLittles" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
-            <div class="container">
-                <img src="./img/baseball_5_7_1.jpeg" alt="baseball"  class="image"/>
-                <div class="overlay" name="baseballLittles" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+            <div className="container">
+                <img src="./img/baseball_5_7_1.jpeg" alt="baseball"  className="image"/>
+                <div className="overlay" name="baseballLittles" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
           </div>
@@ -73,19 +73,19 @@ function Sports(){
           <div className="flexContainer horizontal spaceAround">
             <div className="activityBox">
               <h3>ADVANCED SKILLS</h3>
-              <div class="container">
-                <img src="./img/Basic_8_10.png" alt="advanced skills" class="image"/>
-                <div class="overlay" name="advancedSkillsBigs" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+              <div className="container">
+                <img src="./img/Basic_8_10.png" alt="advanced skills" className="image"/>
+                <div className="overlay" name="advancedSkillsBigs" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
             </div>
             <div className="activityBox">
               <h3>TRACK</h3>
-              <div class="container">
-                <img src="./img/Track_8_10_3.png" alt="track" name="trackBigs"  class="image"/>
-                <div class="overlay" name="trackBigs" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+              <div className="container">
+                <img src="./img/Track_8_10_3.png" alt="track" name="trackBigs"  className="image"/>
+                <div className="overlay" name="trackBigs" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -94,19 +94,19 @@ function Sports(){
         <div className="flexContainer horizontal spaceAround">
           <div className="activityBox">
             <h3>SOCCER</h3>
-            <div class="container">
-                <img src="./img/Soccer_8_10_1.jpeg" alt="soccer"   class="image"/>
-                <div class="overlay" name="soccerBigs" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+            <div className="container">
+                <img src="./img/Soccer_8_10_1.jpeg" alt="soccer"   className="image"/>
+                <div className="overlay" name="soccerBigs" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
           </div>
           <div className="activityBox">
             <h3>BASEBALL</h3>
-            <div class="container">
-                <img src="./img/baseball_8_10_girls.jpeg" alt="baseball"  class="image"/>
-                <div class="overlay" name="baseballBigs" onClick={onSelect}>
-                  <div class="text">LEARN MORE</div>
+            <div className="container">
+                <img src="./img/baseball_8_10_girls.jpeg" alt="baseball"  className="image"/>
+                <div className="overlay" name="baseballBigs" onClick={onSelect}>
+                  <div className="text">LEARN MORE</div>
                 </div>
               </div>
           </div>
@@ -115,6 +115,5 @@ function Sports(){
     </div>
   )
 }
-
 
 export default Sports

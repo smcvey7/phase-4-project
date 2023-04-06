@@ -13,12 +13,11 @@ class Signup < ApplicationRecord
         signup = camper.signups.find_by(activity_id: old_activity.id)
         if updated_activity_id == "none"
           Signup.find(signup.id).delete
-        elsif updated_activity_id == old_activity.id
         else
-          signup.update(activity_id: updated_activity_id)
+          signup.update(activity_id: updated_activity_id) unless updated_activity_id == old_activity.id
         end
       else
-        camper.signups.create(activity_id: updated_activity_id)
+        camper.signups.create(activity_id: updated_activity_id) unless updated_activity_id == "none"
       end
     end
     camper.activities
