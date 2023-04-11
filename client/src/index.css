@@ -12,9 +12,35 @@ h1, h2, h3.red{
   margin-left: 10px;
 }
 
+h4{
+  width: 30%;
+  margin: 0px;
+  text-align: left;
+}
+
+.dateOption{
+  margin: 10px;
+}
+
+#costTableDiv{
+  width: 40%;
+}
+
+th{
+  text-align: left;
+}
+
+#costTable{
+  width: 100%;
+}
+
 /* #changeRegistrations{
   margin-top: 0px;
 } */
+
+#registrationList{
+  width: 40%;
+}
 
 #siteName{
   font-size: 80px;
@@ -39,7 +65,10 @@ code {
 
 .vertical{
   flex-direction: column;
+}
 
+.flexEnd{
+  justify-content: flex-end;
 }
 
 .spaceAround{
@@ -48,10 +77,6 @@ code {
 
 .spaceBetween{
   justify-content: space-between;
-}
-
-h4{
-  text-align: center;
 }
 
 .headerMargin{

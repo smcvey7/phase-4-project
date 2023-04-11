@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 function Registrations({camper, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
-  const [tableRows, setTableRows] = useState(null)
+  const [tableData, setTableData] = useState(null)
   const [formData, setFormData] = useState({
     registrations: {
       time1: "none",
@@ -22,38 +22,29 @@ function Registrations({camper, activities, updateActivities}){
         time3: "none",
         time4: "none"
       }
-      const rows = [
-        <tr>
-          <td>"none"</td>
-          <td>0</td>
-        </tr>,
-        <tr>
-          <td>"none"</td>
-          <td>0</td>
-        </tr>,
-        <tr>
-          <td>"none"</td>
-          <td>0</td>
-        </tr>,
-        <tr>
-          <td>"none"</td>
-          <td>0</td>
-        </tr>
-      ]
+      const tableData = {
+        rows: [],
+        total: 0
+      }
 
       if (camper){
         camper.activities.map((activity)=>{
-          registrations[activity.dates] = activity.id 
+          registrations[activity.dates] = activity.id
+          tableData.rows.push(<tr>
+            <td>{activity.name}</td>
+            <td>${activity.cost}</td>
+          </tr>)
+          tableData.total += activity.cost
           return null
         })
       }
-      return {registrations, rows}
+      return {registrations, tableData}
     }
     setFormData({
       camper_id: camper ? camper.id : null,
       registrations: findRegistrations().registrations
     })
-    setTableRows(findRegistrations().rows)
+    setTableData(findRegistrations().tableData)
   }, [camper])
   // create form select options from all available activities depending on ageGroup
   function createOptions(time){
@@ -100,37 +91,47 @@ function Registrations({camper, activities, updateActivities}){
     <div id="registrations">
       <h2>{camper.first_name}'s Registrations (age: {camper.age})</h2>
       <div id="registrations" className="flexContainer horizontal spaceAround">
-      <div>
-        <h3 id="changeRegistrations">Change Registrations</h3>
-        {isUpdated ? <p className="green">Your registrations are up to date</p> : <p className="red">Registrations changed. Click update to save changes</p>}
+        <div id="registrationList">
+          <h3 id="changeRegistrations">Change Registrations</h3>
+          {isUpdated ? <p className="green">Your registrations are up to date</p> : <p className="red">Registrations changed. Click update to save changes</p>}
           <form onSubmit={handleSubmit}>
-            6/5-16:
+            <div className="flexContainer horizontal spaceBetween dateOption">
+              <h4>6/5-16:</h4>
               <select name="time1" value={formData.registrations.time1} onChange={handleChange}>
                 <option value="none">None</option>
                 {createOptions("time1")}
               </select><br/>
-            6/19-30:
-            <select name="time2" value={formData.registrations.time2} onChange={handleChange}>
-                <option value="none">None</option>
-                {createOptions("time2")}
-              </select><br/>
-            7/3-14:
-            <select name="time3" value={formData.registrations.time3} onChange={handleChange}>
-                <option value="none">None</option>
-                {createOptions("time3")}
-              </select><br/>
-            7/17-28:
-            <select name="time4" value={formData.registrations.time4} onChange={handleChange}>
-                <option value="none">None</option>
-                {createOptions("time4")}
-              </select><br/>
+            </div>
+            <div className="flexContainer horizontal spaceBetween dateOption">
+              <h4>6/19-30:</h4>
+              <select name="time2" value={formData.registrations.time2} onChange={handleChange}>
+                  <option value="none">None</option>
+                  {createOptions("time2")}
+                </select><br/>
+            </div>
+            <div className="flexContainer horizontal spaceBetween dateOption">
+              <h4>7/3-14:</h4>
+              <select name="time3" value={formData.registrations.time3} onChange={handleChange}>
+                  <option value="none">None</option>
+                  {createOptions("time3")}
+                </select><br/>
+            </div>
+            <div className="flexContainer horizontal spaceBetween dateOption">
+              <h4>7/17-28:</h4>
+              <select name="time4" value={formData.registrations.time4} onChange={handleChange}>
+                  <option value="none">None</option>
+                  {createOptions("time4")}
+                </select><br/>
+            </div>
+            <div className="flexContainer flexEnd">
               <button type="submit">{isLoading ? "Loading..." : "Update"}</button>
+            </div>
           </form>
         </div>
-        <div>
+        <div id="costTableDiv" >
           <h3>Costs</h3>
-          <div>
-            <table>
+          <div  className="flexContainer spaceBetween">
+            <table id="costTable">
               <thead>
                 <tr>
                   <th>Camp</th>
@@ -138,7 +139,11 @@ function Registrations({camper, activities, updateActivities}){
                 </tr>
               </thead>
               <tbody>
-                {tableRows}
+                {tableData.rows}
+                <tr>
+                  <td><strong>Total:</strong></td>
+                  <td><strong>${tableData.total}</strong></td>
+                </tr>
               </tbody>
             </table>
           </div>
