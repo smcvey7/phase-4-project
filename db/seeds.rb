@@ -9,7 +9,7 @@ require 'faker'
 
 camper_list = []
 
-Activity.create([
+activity_list = [
   {
     name: "Basic Skills",
     dates: "time1",
@@ -458,7 +458,6 @@ Activity.create([
     cost: [100, 150, 200, 250][rand(0..3)]
   }
 ]
-)
 
 20.times do
 
@@ -473,3 +472,4 @@ Activity.create([
 end
 
 # Camper.create!(camper_list)
+Activity.create!(activity_list)
