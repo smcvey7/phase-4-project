@@ -3,7 +3,10 @@ import React, {useEffect, useState} from "react";
 function Registrations({camper, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
-  const [tableData, setTableData] = useState(null)
+  const [tableData, setTableData] = useState({
+    rows: [],
+    total: 0
+  })
   const [formData, setFormData] = useState({
     registrations: {
       time1: "none",
@@ -30,7 +33,7 @@ function Registrations({camper, activities, updateActivities}){
       if (camper){
         camper.activities.map((activity)=>{
           registrations[activity.dates] = activity.id
-          tableData.rows.push(<tr>
+          tableData.rows.push(<tr key={activity.id}>
             <td>{activity.name}</td>
             <td>${activity.cost}</td>
           </tr>)
@@ -140,11 +143,13 @@ function Registrations({camper, activities, updateActivities}){
               </thead>
               <tbody>
                 {tableData.rows}
-                <tr>
-                  <td><strong>Total:</strong></td>
-                  <td><strong>${tableData.total}</strong></td>
-                </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>Total:</th>
+                  <th>${tableData.total}</th>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>

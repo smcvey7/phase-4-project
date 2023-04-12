@@ -18,6 +18,10 @@ h4{
   text-align: left;
 }
 
+#welcome{
+  margin: auto 10px auto 0px;
+}
+
 .dateOption{
   margin: 10px;
 }
@@ -33,10 +37,6 @@ th{
 #costTable{
   width: 100%;
 }
-
-/* #changeRegistrations{
-  margin-top: 0px;
-} */
 
 #registrationList{
   width: 40%;

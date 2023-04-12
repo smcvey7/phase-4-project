@@ -472,4 +472,4 @@ activity_list = [
 end
 
 # Camper.create!(camper_list)
-Activity.create!(activity_list)
+# Activity.create!(activity_list)

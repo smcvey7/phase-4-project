@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Welcome({ camper, onLogout }){
   return(
-    <div>
-      <div/>
+    <div id="welcome">
       {camper ?
         <div className="flexContainer vertical spaceBetween contentRight">
           <em>Welcome, <strong>{camper.first_name}</strong></em><NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink><br/>
