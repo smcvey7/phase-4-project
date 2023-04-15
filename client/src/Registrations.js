@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import Costs from "./Costs";
 
 function Registrations({camper, activities, updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
@@ -134,23 +135,7 @@ function Registrations({camper, activities, updateActivities}){
         <div id="costTableDiv" >
           <h3>Costs</h3>
           <div  className="flexContainer spaceBetween">
-            <table id="costTable">
-              <thead>
-                <tr>
-                  <th>Camp</th>
-                  <th>Fee</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.rows}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Total:</th>
-                  <th>${tableData.total}</th>
-                </tr>
-              </tfoot>
-            </table>
+            <Costs tableData={tableData} />
           </div>
         </div>
       </div>
