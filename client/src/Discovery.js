@@ -28,7 +28,7 @@ function Discovery() {
                 <div className="container">
                   <img src="./img/science_5_7_2.jpeg" alt="science" className="image" />
                   <div className="overlay" name="scienceLittles" onClick={onSelect}>
-                    <div className="text">LEARN MORE</div>
+                    <div className="text" name="scienceLittles" onClick={onSelect}>LEARN MORE</div>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@ function Discovery() {
                 <div className="container">
                   <img src="./img/art_5_7_5.jpeg" alt="art" className="image" />
                   <div className="overlay" name="artLittles" onClick={onSelect}>
-                    <div className="text">LEARN MORE</div>
+                    <div className="text" name="artLittles" onClick={onSelect}>LEARN MORE</div>
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@ function Discovery() {
                 <div className="container">
                   <img src="./img/science_5_7_1.jpeg" alt="science" className="image" />
                   <div className="overlay" name="scienceBigs" onClick={onSelect}>
-                    <div className="text">LEARN MORE</div>
+                    <div className="text" name="scienceBigs" onClick={onSelect}>LEARN MORE</div>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@ function Discovery() {
                 <div className="container">
                   <img src="./img/art_8_10.jpeg" alt="art" className="image" />
                   <div className="overlay" name="artBigs" onClick={onSelect}>
-                    <div className="text">LEARN MORE</div>
+                    <div className="text" name="artBigs" onClick={onSelect}>LEARN MORE</div>
                   </div>
                 </div>
               </div>

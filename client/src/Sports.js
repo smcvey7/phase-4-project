@@ -28,7 +28,7 @@ function Sports(){
               <div className="container">
                 <img src="./img/Basic_5_7_2.png" alt="basic skills"  className="image"/>
                 <div className="overlay" name="basicSkillsLittles" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="basicSkillsLittles" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@ function Sports(){
               <div className="container">
                 <img src="./img/Track_5_7_2.png" alt="track"  className="image"/>
                 <div className="overlay" name="trackLittles" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="trackLittles" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ function Sports(){
             <div className="container">
                 <img src="./img/soccer_5_7.jpeg"  alt="soccer"  className="image"/>
                 <div className="overlay" name="soccerLittles" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="soccerLittles" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
           </div>
@@ -58,7 +58,7 @@ function Sports(){
             <div className="container">
                 <img src="./img/baseball_5_7_1.jpeg" alt="baseball"  className="image"/>
                 <div className="overlay" name="baseballLittles" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="baseballLittles" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
           </div>
@@ -76,7 +76,7 @@ function Sports(){
               <div className="container">
                 <img src="./img/Basic_8_10.png" alt="advanced skills" className="image"/>
                 <div className="overlay" name="advancedSkillsBigs" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="advancedSkillsBigs" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ function Sports(){
               <div className="container">
                 <img src="./img/Track_8_10_3.png" alt="track" name="trackBigs"  className="image"/>
                 <div className="overlay" name="trackBigs" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="trackBigs" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ function Sports(){
             <div className="container">
                 <img src="./img/Soccer_8_10_1.jpeg" alt="soccer"   className="image"/>
                 <div className="overlay" name="soccerBigs" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="soccerBigs" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
           </div>
@@ -106,7 +106,7 @@ function Sports(){
             <div className="container">
                 <img src="./img/baseball_8_10_girls.jpeg" alt="baseball"  className="image"/>
                 <div className="overlay" name="baseballBigs" onClick={onSelect}>
-                  <div className="text">LEARN MORE</div>
+                  <div className="text" name="baseballBigs" onClick={onSelect}>LEARN MORE</div>
                 </div>
               </div>
           </div>
