@@ -21,6 +21,11 @@ class CampersController < ApplicationController
     end
   end
 
+  def update
+    camper = Camper.find_by(id: params[:id])
+    camper.update(camper_params)
+  end
+
   private
 
   def camper_params

@@ -480,5 +480,5 @@ activity_list = [
   }
 end
 
-Camper.create!(camper_list)
+# Camper.create!(camper_list)
 # Activity.create!(activity_list)
