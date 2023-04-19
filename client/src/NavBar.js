@@ -1,8 +1,13 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-function NavBar(){
+function NavBar({camper}){
   return(
+    camper && camper ? 
+    <div id='navBar' className='flexContainer horizontal navbar spaceAround'>
+      <NavLink className="navLinks" to="/message-list" >Messages</NavLink>
+      <NavLink className="navLinks" to="/camper-registrations" >Registrations</NavLink>
+    </div> :
     <div id='navBar' className='flexContainer horizontal navbar spaceAround'>
         <NavLink className="navLinks" to="/" >Home</NavLink>
         <div className='dropdown'>
