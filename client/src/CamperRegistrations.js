@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 
-function MessageList({camper}){
+function CamperRegistrations({camper}){
   const navigate = useNavigate()
 
   useEffect(()=>{
@@ -13,9 +13,9 @@ function MessageList({camper}){
   
   return(
     <div>
-      <p>Message List</p>
+      <p>Registration List</p>
     </div>
   )
 }
 
-export default MessageList
+export default CamperRegistrations

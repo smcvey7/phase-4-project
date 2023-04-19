@@ -11,6 +11,7 @@ import Sports from './Sports';
 import Discovery from './Discovery';
 import Registrations from './Registrations';
 import MessageList from './MessageList';
+import CamperRegistrations from './CamperRegistrations';
 
 function App() {
   const [camper, setCamper] = useState(null)
@@ -73,7 +74,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/registrations' element={<Registrations activities={activities} camper={camper} updateActivities={updateActivities}/>} />
         <Route path='/message-list' element={<MessageList activities={activities} camper={camper} />} />
-        <Route path='/camper-registrations' element={<Registrations activities={activities} camper={camper}/>} />
+        <Route path='/camper-registrations' element={<CamperRegistrations activities={activities} camper={camper}/>} />
       </Routes>
       </div>
     </div>
