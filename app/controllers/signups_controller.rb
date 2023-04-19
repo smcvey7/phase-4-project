@@ -11,9 +11,4 @@ class SignupsController < ApplicationController
     render json: updates, status: :created
   end
 
-
-  private
-  # def signup_params
-  #   params.permit(:camper_id, :registrations, :signup)
-  # end
 end

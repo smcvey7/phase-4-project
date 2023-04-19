@@ -7,7 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-camper_list = []
+camper_list = [{
+  username: "smcvey",
+  first_name: "Steven",
+  last_name: "McVey",
+  age: 33,
+  password: "password",
+  password_confirmation: "password",
+  admin: true
+  }]
 
 activity_list = [
   {
@@ -467,9 +475,10 @@ activity_list = [
     last_name: Faker::Name.last_name,
     age: Faker::Number.within(range: 5..10),
     password: "password",
-    password_confirmation: "password"
+    password_confirmation: "password",
+    admin: false
   }
 end
 
-# Camper.create!(camper_list)
+Camper.create!(camper_list)
 # Activity.create!(activity_list)
