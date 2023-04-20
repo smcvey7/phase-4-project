@@ -474,6 +474,7 @@ message_list = []
     name: Faker::Name.first_name ,
     email: Faker::Twitter.screen_name + "@gmail.com",
     message: Faker::Movies::HarryPotter.quote,
+    subject: Faker::Lorem.sentence,
     read: false
   }
 end
