@@ -4,7 +4,8 @@ function Contact(){
   const [formData, setFormData] = useState({
     message: '',
     email: '',
-    name: ''
+    name: '',
+    subject: ''
   })
   // display errors from form validation
   const [errors, setErrors] = useState(null)
@@ -22,7 +23,8 @@ function Contact(){
     setFormData({
       message: '',
       email: '',
-      name: ''
+      name: '',
+      subject: ''
     })
   }
 
@@ -56,6 +58,7 @@ function Contact(){
         <form id="form" onSubmit={handleSubmit}>
           name:<br/><input name="name" value={formData.name} onChange={handleChange} /><br/>
           email:<br/><input name="email" value={formData.email} onChange={handleChange} /><br/>
+          subject:<br/><input name="subject" value={formData.subject} onChange={handleChange} /><br/>
           message:<br/><textarea name='message'  value={formData.message} onChange={handleChange} /><br/>
           <button type="submit">{isLoading ? "Loading..." : "Submit"}</button>
         </form>

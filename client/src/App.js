@@ -71,7 +71,7 @@ function App() {
         <Route path="/sports" element={<Sports/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='/register' element={<Register setCamper={setCamper} />} />
         <Route path='/registrations' element={<Registrations activities={activities} camper={camper} updateActivities={updateActivities}/>} />
         <Route path='/message-list' element={<MessageList activities={activities} camper={camper} />} />
         <Route path='/camper-registrations' element={<CamperRegistrations activities={activities} camper={camper}/>} />

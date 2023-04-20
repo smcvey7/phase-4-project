@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :messages, only: [:index, :create, :destroy]
+  resources :messages, only: [:index, :create, :destroy, :update]
   resources :signups, only: [:index, :create, :show, :destroy]
   resources :activities, only: [:index, :show]
   resources :campers, only: [:index, :show, :create, :destroy, :update]

@@ -1,6 +1,7 @@
 class CampersController < ApplicationController
 
   def index
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session[:admin]
     campers = Camper.all
     render json: campers
   end
@@ -19,11 +20,6 @@ class CampersController < ApplicationController
     else
       render json: {errors: camper.errors.full_messages}, status: :unprocessable_entity
     end
-  end
-
-  def update
-    camper = Camper.find_by(id: params[:id])
-    camper.update(camper_params)
   end
 
   private

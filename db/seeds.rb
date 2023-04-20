@@ -467,6 +467,17 @@ activity_list = [
   }
 ]
 
+message_list = []
+
+20.times do
+  message_list << {
+    name: Faker::Name.first_name ,
+    email: Faker::Twitter.screen_name + "@gmail.com",
+    message: Faker::Movies::HarryPotter.quote,
+    read: false
+  }
+end
+
 20.times do
 
   camper_list << {
@@ -480,5 +491,6 @@ activity_list = [
   }
 end
 
-# Camper.create!(camper_list)
-# Activity.create!(activity_list)
+Camper.create!(camper_list)
+Activity.create!(activity_list)
+Message.create!(message_list)

@@ -9,7 +9,7 @@ function CamperRegistrations({camper}){
     if (!camper || !camper.admin){
       navigate('/')
     }
-  }, [])
+  }, [navigate, camper])
   
   return(
     <div>

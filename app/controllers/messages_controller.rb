@@ -1,13 +1,10 @@
 class MessagesController < ApplicationController
+  before_action :authorize
+  skip_before_action :authorize, only: [:create]
 
   def index
     messages = Message.all
     render json: messages
-  end
-
-  def show
-    message = Message.find_by(id: params[:id])
-    render json: message
   end
 
   def create
@@ -25,8 +22,22 @@ class MessagesController < ApplicationController
     head :no_content
   end
 
+  def update
+    puts "params", params
+    message = Message.find_by(id: params[:id])
+    message.update(read: params[:read])
+
+    render json: message, status: :ok
+  
+  end
+
   private
   def message_params
-    params.permit(:message, :email, :name)
+    params.permit(:message, :email, :name, :subject, :read)
   end
+
+  def authorize
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session[:admin]
+  end
+
 end

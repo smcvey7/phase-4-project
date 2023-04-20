@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 function NavBar({camper}){
   return(
-    camper && camper ? 
+    camper && camper.admin ? 
     <div id='navBar' className='flexContainer horizontal navbar spaceAround'>
       <NavLink className="navLinks" to="/message-list" >Messages</NavLink>
       <NavLink className="navLinks" to="/camper-registrations" >Registrations</NavLink>

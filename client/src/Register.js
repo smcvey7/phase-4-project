@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function Register(){
+function Register({setCamper}){
   const [formData, setFormData] = useState({
       username: "",
       password: "",
@@ -48,8 +48,9 @@ function Register(){
     })
     .then((r)=>{
       if (r.ok){
+        r.json().then((camper)=>setCamper(camper))
         resetFormData()
-        navigate("/login")
+        navigate("/")
       }else{
         r.json().then((error_list)=>setErrors(error_list.errors))
             }

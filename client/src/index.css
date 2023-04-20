@@ -22,6 +22,29 @@ h4{
   margin: auto 10px auto 0px;
 }
 
+#messageList{
+  margin-left: 15px;
+}
+
+h4.subject{
+  width: 100%;
+}
+
+.messageModule{
+  border-style: solid;
+  width: 50%;
+  padding: 0px 10px 10px 10px;
+  margin: 10px;
+}
+
+.messageButton{
+  margin: 5px;
+}
+
+.unread{
+  color: red;
+}
+
 .dateOption{
   margin: 10px;
 }
