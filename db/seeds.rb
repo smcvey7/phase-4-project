@@ -492,6 +492,6 @@ end
   }
 end
 
-Camper.create!(camper_list)
-Activity.create!(activity_list)
-Message.create!(message_list)
+# Camper.create!(camper_list)
+# Activity.create!(activity_list)
+# Message.create!(message_list)

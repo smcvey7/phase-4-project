@@ -14,7 +14,6 @@ function MessageList({camper}){
       .then((r)=>r.json())
       .then((data)=>{
         setMessages(data)
-        navigate('/message-list')
       })
     }
   }, [navigate, camper])

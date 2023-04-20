@@ -23,7 +23,10 @@ function App() {
     .then((r)=>{
       if (r.ok){
         r.json()
-        .then((user)=>setCamper(user))
+        .then((user)=>{
+          setCamper(user)
+          navigate(-1)
+        })
       }
     })
   }, [])
