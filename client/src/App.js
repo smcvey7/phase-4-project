@@ -19,13 +19,14 @@ function App() {
   const navigate = useNavigate()
   // auto-login
   useEffect(()=>{
+    const path = window.location.pathname
     fetch('/me')
     .then((r)=>{
       if (r.ok){
         r.json()
         .then((user)=>{
           setCamper(user)
-          navigate(-1)
+          navigate(path)
         })
       }
     })
@@ -76,7 +77,7 @@ function App() {
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
         <Route path='/register' element={<Register setCamper={setCamper} />} />
         <Route path='/registrations' element={<Registrations activities={activities} camper={camper} updateActivities={updateActivities}/>} />
-        <Route path='/message-list' element={<MessageList activities={activities} camper={camper} />} />
+        <Route path='/message-list' element={<MessageList camper={camper} />} />
         <Route path='/camper-registrations' element={<CamperRegistrations activities={activities} camper={camper}/>} />
       </Routes>
       </div>

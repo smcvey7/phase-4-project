@@ -8,7 +8,7 @@ function MessageList({camper}){
 
   useEffect(()=>{
     if (!camper || !camper.admin){
-      navigate('/')
+      return null
     }else{
       fetch("/messages")
       .then((r)=>r.json())
@@ -29,7 +29,9 @@ function MessageList({camper}){
 
     setMessages(updatedMessages)
   }
-  
+  if (!camper || !camper.admin){
+    return(<em>Unauthorized</em>)
+  }
   return(
     <div id="messageList">
       <h1>Message List</h1>

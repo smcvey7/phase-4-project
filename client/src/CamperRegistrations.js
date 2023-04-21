@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
+import ActivityModule from "./ActivityModule";
 
 
 function CamperRegistrations({camper}){
@@ -13,7 +14,7 @@ function CamperRegistrations({camper}){
 
   useEffect(()=>{
     if (!camper || !camper.admin){
-      navigate('/')
+      return null
     }else{
       fetch("/activities")
       .then((r)=>r.json())
@@ -50,7 +51,9 @@ function handleChange(e){
     [e.target.name]: e.target.value
   })
 }
-  
+if (!camper || !camper.admin){
+  return(<em>Unauthorized</em>)
+}
   return(
     <div>
       <p>Registration List</p>
@@ -70,8 +73,16 @@ function handleChange(e){
           <option value="time4">7/17-28</option>
         </select>
       </form>
-      <div>
-        {filteredActivities ? filteredActivities.map((activity)=><p>{activity.name}({activity.age_group} - {activity.dates})</p>): <></>}
+      <div className="flexContainer horizontal">
+        <div className="camperRegistrations">
+          <h2 className="red">SPORTS</h2>
+          {filteredActivities ? filteredActivities.map((activity)=>{
+          if (activity.activity_type === "sports") return <ActivityModule key={activity.key} activity={activity} />}) : <></>}
+        </div>
+        <div className="camperRegistrations">
+          <h2 className="red">DISCOVERY</h2>
+          {filteredActivities ? filteredActivities.map((activity)=>{
+          if (activity.activity_type === "discovery") return <ActivityModule key={activity.key} activity={activity} />}) : <></>}        </div>
       </div>
     </div>
   )

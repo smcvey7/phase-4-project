@@ -8,14 +8,24 @@
 require 'faker'
 
 camper_list = [{
-  username: "smcvey",
+  username: "admin",
   first_name: "Steven",
   last_name: "McVey",
-  age: 33,
+  age: 100,
   password: "password",
   password_confirmation: "password",
   admin: true
-  }]
+  },
+  {
+    username: "cmills",
+    first_name: "Charles",
+    last_name: "Mills",
+    age: 5,
+    password: "password",
+    password_confirmation: "password",
+    admin: false
+    }
+]
 
 activity_list = [
   {
@@ -479,10 +489,10 @@ message_list = []
   }
 end
 
-20.times do
+500.times do
 
   camper_list << {
-    username: Faker::Twitter.screen_name,
+    username: Faker::Twitter.screen_name + rand(0..200).to_s,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     age: Faker::Number.within(range: 5..10),
@@ -492,6 +502,34 @@ end
   }
 end
 
-# Camper.create!(camper_list)
-# Activity.create!(activity_list)
-# Message.create!(message_list)
+Camper.create!(camper_list)
+Activity.create!(activity_list)
+Message.create!(message_list)
+
+big_activities = {
+  time1: [29, 33, 37, 41, 45, 49, 53],
+  time2: [30, 34, 38, 42, 46, 50, 54],
+  time3: [31, 35, 39, 43, 47, 51, 55],
+  time4: [32, 36, 40, 44, 48, 52, 56]
+}
+little_activities = {
+  time1: [1, 5, 9, 13, 17, 21, 25],
+  time2: [2, 6, 10 ,14, 18, 22, 26],
+  time3: [3, 7, 11, 15, 19, 23, 27],
+  time4: [4, 8, 12, 16, 20, 24, 28]
+}
+
+Camper.all.each do |camper|
+  if camper.age <= 7
+    Signup.create(camper_id: camper.id, activity_id: little_activities[:time1][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: little_activities[:time2][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: little_activities[:time3][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: little_activities[:time4][rand(0..6)])
+  else
+    Signup.create(camper_id: camper.id, activity_id: big_activities[:time1][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: big_activities[:time2][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: big_activities[:time3][rand(0..6)])
+    Signup.create(camper_id: camper.id, activity_id: big_activities[:time4][rand(0..6)])
+
+  end
+end

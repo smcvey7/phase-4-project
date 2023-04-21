@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
   private
 
   def authorize
-    return render json: { error: "Not authorized" }, status: :unauthorized unless session[:admin]
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session[:camper_id]
   end
 
 end
