@@ -489,13 +489,26 @@ message_list = []
   }
 end
 
-500.times do
+200.times do
 
   camper_list << {
     username: Faker::Twitter.screen_name + rand(0..200).to_s,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    age: Faker::Number.within(range: 5..10),
+    age: Faker::Number.within(range: 5..7),
+    password: "password",
+    password_confirmation: "password",
+    admin: false
+  }
+end
+
+200.times do
+
+  camper_list << {
+    username: Faker::Twitter.screen_name + rand(0..200).to_s,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    age: Faker::Number.within(range: 8..10),
     password: "password",
     password_confirmation: "password",
     admin: false
@@ -520,42 +533,41 @@ little_activities = {
 }
 signup_list = []
 
-Camper.all.each do |camper|
-  if camper.age <= 7
+for a in 1..200 do
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a,
       activity_id: little_activities[:time1][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a,
       activity_id: little_activities[:time2][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a,
       activity_id: little_activities[:time3][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a,
       activity_id: little_activities[:time4][rand(0..6)]
     }
-  else
+
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a+200,
       activity_id: big_activities[:time1][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a+200,
       activity_id: big_activities[:time2][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a+200,
       activity_id: big_activities[:time3][rand(0..6)]
     }
     signup_list << {
-      camper_id: camper.id,
+      camper_id: a+200,
       activity_id: big_activities[:time4][rand(0..6)]
     }
-  end
+
 end
 
 Signup.create!(signup_list)
