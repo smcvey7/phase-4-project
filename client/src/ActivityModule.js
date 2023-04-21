@@ -8,6 +8,7 @@ function ActivityModule({activity}){
       case 'time2' : return "6/19-30"
       case 'time3' : return "7/3-14"
       case 'time4' : return "7/17-28"
+      default : return "none"
     }
   }
 

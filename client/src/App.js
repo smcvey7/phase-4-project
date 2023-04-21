@@ -30,7 +30,7 @@ function App() {
         })
       }
     })
-  }, [])
+  }, [navigate])
   // fetch activities
   useEffect(()=>{
     fetch('/activities')

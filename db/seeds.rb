@@ -518,18 +518,44 @@ little_activities = {
   time3: [3, 7, 11, 15, 19, 23, 27],
   time4: [4, 8, 12, 16, 20, 24, 28]
 }
+signup_list = []
 
 Camper.all.each do |camper|
   if camper.age <= 7
-    Signup.create(camper_id: camper.id, activity_id: little_activities[:time1][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: little_activities[:time2][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: little_activities[:time3][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: little_activities[:time4][rand(0..6)])
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: little_activities[:time1][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: little_activities[:time2][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: little_activities[:time3][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: little_activities[:time4][rand(0..6)]
+    }
   else
-    Signup.create(camper_id: camper.id, activity_id: big_activities[:time1][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: big_activities[:time2][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: big_activities[:time3][rand(0..6)])
-    Signup.create(camper_id: camper.id, activity_id: big_activities[:time4][rand(0..6)])
-
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: big_activities[:time1][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: big_activities[:time2][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: big_activities[:time3][rand(0..6)]
+    }
+    signup_list << {
+      camper_id: camper.id,
+      activity_id: big_activities[:time4][rand(0..6)]
+    }
   end
 end
+
+Signup.create!(signup_list)

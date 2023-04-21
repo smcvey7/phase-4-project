@@ -77,12 +77,19 @@ if (!camper || !camper.admin){
         <div className="camperRegistrations">
           <h2 className="red">SPORTS</h2>
           {filteredActivities ? filteredActivities.map((activity)=>{
-          if (activity.activity_type === "sports") return <ActivityModule key={activity.key} activity={activity} />}) : <></>}
+          if (activity.activity_type === "sports"){
+            return <ActivityModule key={activity.id} activity={activity} />
+          }else return null
+          }) : <></>}
         </div>
         <div className="camperRegistrations">
           <h2 className="red">DISCOVERY</h2>
           {filteredActivities ? filteredActivities.map((activity)=>{
-          if (activity.activity_type === "discovery") return <ActivityModule key={activity.key} activity={activity} />}) : <></>}        </div>
+          if (activity.activity_type === "discovery"){
+            return <ActivityModule key={activity.id} activity={activity} />
+            }else return null
+          }) : <></>}
+        </div>
       </div>
     </div>
   )
