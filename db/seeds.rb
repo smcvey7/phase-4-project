@@ -492,7 +492,7 @@ end
 200.times do
 
   camper_list << {
-    username: Faker::Twitter.screen_name + rand(0..200).to_s,
+    username: Faker::Twitter.unique.screen_name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     age: Faker::Number.within(range: 5..7),
@@ -505,7 +505,7 @@ end
 200.times do
 
   camper_list << {
-    username: Faker::Twitter.screen_name + rand(0..200).to_s,
+    username: Faker::Twitter.unique.screen_name,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     age: Faker::Number.within(range: 8..10),
@@ -533,7 +533,7 @@ little_activities = {
 }
 signup_list = []
 
-for a in 1..200 do
+for a in 2..201 do
     signup_list << {
       camper_id: a,
       activity_id: little_activities[:time1][rand(0..6)]
