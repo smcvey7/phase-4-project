@@ -8,6 +8,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 h1, h2, h3.red{
   margin-left: 10px;
 }

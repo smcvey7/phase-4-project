@@ -17,9 +17,9 @@ camper_list = [{
   admin: true
   },
   {
-    username: "cmills",
-    first_name: "Charles",
-    last_name: "Mills",
+    username: "smcvey",
+    first_name: "Steven",
+    last_name: "McVey",
     age: 5,
     password: "password",
     password_confirmation: "password",

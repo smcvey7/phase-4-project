@@ -1,5 +1,5 @@
 class Camper < ApplicationRecord
-  has_many :signups
+  has_many :signups, dependent: :destroy
   has_many :activities, through: :signups
 
   has_secure_password
