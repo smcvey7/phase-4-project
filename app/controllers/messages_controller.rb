@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
     message = Message.find_by(id: params[:id])
     message.update(read: params[:read])
 
-    render json: message, status: :ok
+    render json: message
   
   end
 

@@ -8,13 +8,13 @@ This project is intended to demonstrate the skills I have gained during phase 4 
 -Camp staff can view the rosters for each camp and can view and respond to communications from parents.
 
 ## Running
-
+First set up:
  From the root directory run
  $ bundle install
  $ rails db: migrate db:seed
  $ npm install --prefix client
 
-Then to start run
+Then to start run:
 $ rails s
 $ npm start --prefix client
 
