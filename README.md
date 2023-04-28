@@ -15,8 +15,7 @@ First set up:
  $ npm install --prefix client
 
 Then to start run:
-$ rails s
-$ npm start --prefix client
+$ foreman start -f Procfile.dev
 
 ---IMPORTANT---
 Users are required to log in to access most of the functionality of the app. Users can create a new account under sign up. To access the admin version of the site you need to log in as:

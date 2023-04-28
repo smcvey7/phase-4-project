@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
+import MyContext from "./MyContext";
 
-function Welcome({ camper, onLogout }){
+function Welcome({ onLogout }){
+  const {camper} = useContext(MyContext)
   return(
     <div id="welcome">
       {camper ?

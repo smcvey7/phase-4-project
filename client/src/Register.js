@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import MyContext from "./MyContext";
 
-function Register({setCamper}){
+function Register(){
   const [formData, setFormData] = useState({
       username: "",
       password: "",
@@ -13,6 +14,7 @@ function Register({setCamper}){
   const [isLoading, setIsLoading]=useState(false)
   const [errors, setErrors]=useState(null)
   const navigate = useNavigate()
+  const {setCamper} = useContext(MyContext)
 
   function resetFormData(){
     setFormData({

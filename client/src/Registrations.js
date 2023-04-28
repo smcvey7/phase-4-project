@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import Costs from "./Costs";
+import MyContext from "./MyContext";
 
-function Registrations({camper, activities, updateActivities}){
+function Registrations({updateActivities}){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
   const [tableData, setTableData] = useState({
@@ -16,6 +17,7 @@ function Registrations({camper, activities, updateActivities}){
       time4: "none"
     }
   })
+  const {camper, activities} = useContext(MyContext)
 
   useEffect(()=>{
     // find camper's active registrations to auto-fill form

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavLink} from "react-router-dom";
+import MyContext from './MyContext';
 
-function NavBar({camper}){
+function NavBar(){
+  const {camper} = useContext(MyContext)
+  
   return(
     camper && camper.admin ? 
     <div id='navBar' className='flexContainer horizontal navbar spaceAround'>

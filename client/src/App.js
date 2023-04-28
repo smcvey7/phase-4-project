@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import {Route, Routes, useNavigate} from "react-router-dom";
 import Home from './Home';
 import NavBar from './NavBar';
@@ -12,11 +12,13 @@ import Discovery from './Discovery';
 import Registrations from './Registrations';
 import MessageList from './MessageList';
 import CamperRegistrations from './CamperRegistrations';
+import MyContext from './MyContext';
 
 function App() {
-  const [camper, setCamper] = useState(null)
-  const [activities, setActivities]= useState(null)
+  const {camper, setCamper} = useContext(MyContext)
+  const {activities, setActivities} = useContext(MyContext)
   const navigate = useNavigate()
+
   // auto-login
   useEffect(()=>{
     const path = window.location.pathname
@@ -31,12 +33,14 @@ function App() {
       }
     })
   }, [navigate])
+
   // fetch activities
   useEffect(()=>{
     fetch('/activities')
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
-  }, [])
+  }, [camper])
+  
 // delete session[:camper_id]
   function onLogout(){
     fetch('/logout', {method: "DELETE"}).then((r)=>{
@@ -65,9 +69,9 @@ function App() {
           <h1 id='siteName' className='headerMargin'>SCAMPS</h1>
           <h3 className='headerMargin'>Salem Camps</h3>
         </div>
-        <Welcome camper={camper} onLogout={onLogout} />
+        <Welcome onLogout={onLogout} />
       </div>
-      <NavBar camper={camper} />
+      <NavBar />
       <div id='body'>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -75,10 +79,10 @@ function App() {
         <Route path="/sports" element={<Sports/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
-        <Route path='/register' element={<Register setCamper={setCamper} />} />
-        <Route path='/registrations' element={<Registrations activities={activities} camper={camper} updateActivities={updateActivities}/>} />
-        <Route path='/message-list' element={<MessageList camper={camper} />} />
-        <Route path='/camper-registrations' element={<CamperRegistrations activities={activities} camper={camper}/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/registrations' element={<Registrations updateActivities={updateActivities}/>} />
+        <Route path='/message-list' element={<MessageList/>} />
+        <Route path='/camper-registrations' element={<CamperRegistrations/>} />
       </Routes>
       </div>
     </div>

@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import ActivityModule from "./ActivityModule";
+import MyContext from "./MyContext";
 
-
-function CamperRegistrations({camper}){
+function CamperRegistrations(){
   const navigate = useNavigate()
-  const [activities, setActivities] = useState(null)
+  const {activities, setActivities} = useContext(MyContext)
   const [filteredActivities, setFilteredActivities] = useState(null)
   const [currentSelection, setCurrentSelection] = useState({
     age_group: "all",
     dates: "all"
   })
+  const {camper} = useContext(MyContext)
 
   useEffect(()=>{
     if (!camper || !camper.admin){

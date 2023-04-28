@@ -9,7 +9,6 @@ function Message({info, onDelete, updateMessages}){
   }, [info])
 
   function handleClick(){
-    console.log(info.read, isRead)
     fetch(`/messages/${info.id}`, {
       method: "PATCH",
       headers: {

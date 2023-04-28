@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import Message from "./Message";
+import MyContext from "./MyContext";
 
-function MessageList({camper}){
+function MessageList(){
   const navigate = useNavigate()
   const [messages, setMessages] = useState(null)
+  const {camper} = useContext(MyContext)
 
   useEffect(()=>{
     if (!camper || !camper.admin){
