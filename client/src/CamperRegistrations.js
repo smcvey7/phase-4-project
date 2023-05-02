@@ -28,7 +28,7 @@ function CamperRegistrations(){
         }))
       })
     }
-  }, [navigate, camper])
+  }, [navigate, camper, setActivities])
 
   useEffect(()=>{
     if (!activities) return null

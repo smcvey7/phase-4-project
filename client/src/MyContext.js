@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export const MyContext = createContext();
+const MyContext = createContext();
 
 export function MyProvider({children}){
   const [camper, setCamper] = useState(null);

@@ -16,7 +16,7 @@ import MyContext from './MyContext';
 
 function App() {
   const {camper, setCamper} = useContext(MyContext)
-  const {activities, setActivities} = useContext(MyContext)
+  const {setActivities} = useContext(MyContext)
   const navigate = useNavigate()
 
   // auto-login
@@ -32,14 +32,14 @@ function App() {
         })
       }
     })
-  }, [navigate])
+  }, [navigate, setCamper])
 
   // fetch activities
   useEffect(()=>{
     fetch('/activities')
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
-  }, [camper])
+  }, [camper, setActivities])
   
 // delete session[:camper_id]
   function onLogout(){
