@@ -19,5 +19,6 @@ $ foreman start -f Procfile.dev
 
 ---IMPORTANT---
 Users are required to log in to access most of the functionality of the app. Users can create a new account under sign up. To access the admin version of the site you need to log in as:
-  username: admin
-  password: password
+
+username: admin
+password: password
