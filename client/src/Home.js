@@ -13,7 +13,7 @@ function Home(){
           <h2>SPORT CAMPS</h2>
           <div className="container">
             <img src="./img/soccer_5_7.jpeg" alt="sports camps"  className="image"/>
-            <div className="overlay" onClick={()=>navigate('/discovery')}>
+            <div className="overlay" onClick={()=>navigate('/sports')}>
               <div className="text" onClick={()=>navigate('/sports')}>LEARN MORE</div>
             </div>
           </div>
