@@ -20,7 +20,7 @@ function Welcome(){
     <div id="welcome">
       {camper ?
         <div className="flexContainer vertical spaceBetween contentRight">
-          <em>Welcome, <strong>{camper.first_name}</strong></em><NavLink to="/" onClick={()=>onLogout()}>Log out</NavLink><br/>
+          <em>Welcome, <strong>{camper.first_name}</strong></em><NavLink to="/" onClick={onLogout}>Log out</NavLink><br/>
           {camper.admin ? null : <NavLink to='/registrations'>My registrations</NavLink>}
         </div>:
         <div>
