@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
+import MyContext from "./MyContext";
 
 function LoginSignUp({ onLogin }){
+  const {setCamper} = useContext(MyContext)
+
   const [userInfo, setUserInfo] = useState({
     username: "",
     password: ""
@@ -17,6 +20,11 @@ function LoginSignUp({ onLogin }){
         password: ""
       }
     )
+  }
+
+  // set state with user info
+  function onLogin(user){
+    setCamper(user)
   }
 
   function handleChange(e){

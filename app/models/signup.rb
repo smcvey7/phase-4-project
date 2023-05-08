@@ -16,13 +16,13 @@ class Signup < ApplicationRecord
           Signup.find(signup.id).delete
         # if changing one activity to another
         else
-          signup.update(activity_id: updated_activity_id) unless updated_activity_id == old_activity.id
+          signup.update(activity_id: updated_activity_id, paid: false) unless updated_activity_id == old_activity.id
         end
       # if no old activity, create new
       else
-        camper.signups.create(activity_id: updated_activity_id) unless updated_activity_id == "none"
+        camper.signups.create(activity_id: updated_activity_id, paid: false) unless updated_activity_id == "none"
       end
     end
-    camper.activities
+    camper
   end
 end

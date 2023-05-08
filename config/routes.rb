@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :messages, only: [:index, :create, :destroy, :update]
-  resources :signups, only: [:create]
+  resources :signups, only: [:create, :update]
   resources :activities, only: [:index]
   resources :campers, only: [:index, :show, :create]
   # Routing logic: fallback requests for React Router.

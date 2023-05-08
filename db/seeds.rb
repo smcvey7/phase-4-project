@@ -532,40 +532,49 @@ little_activities = {
   time4: [4, 8, 12, 16, 20, 24, 28]
 }
 signup_list = []
+random_boolean = [true, false].sample
 
 for a in 2..201 do
     signup_list << {
       camper_id: a,
-      activity_id: little_activities[:time1][rand(0..6)]
+      activity_id: little_activities[:time1][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a,
-      activity_id: little_activities[:time2][rand(0..6)]
+      activity_id: little_activities[:time2][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a,
-      activity_id: little_activities[:time3][rand(0..6)]
+      activity_id: little_activities[:time3][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a,
-      activity_id: little_activities[:time4][rand(0..6)]
+      activity_id: little_activities[:time4][rand(0..6)],
+      paid: random_boolean
     }
 
     signup_list << {
       camper_id: a+200,
-      activity_id: big_activities[:time1][rand(0..6)]
+      activity_id: big_activities[:time1][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a+200,
-      activity_id: big_activities[:time2][rand(0..6)]
+      activity_id: big_activities[:time2][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a+200,
-      activity_id: big_activities[:time3][rand(0..6)]
+      activity_id: big_activities[:time3][rand(0..6)],
+      paid: random_boolean
     }
     signup_list << {
       camper_id: a+200,
-      activity_id: big_activities[:time4][rand(0..6)]
+      activity_id: big_activities[:time4][rand(0..6)],
+      paid: random_boolean
     }
 
 end

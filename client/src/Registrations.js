@@ -2,7 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import Costs from "./Costs";
 import MyContext from "./MyContext";
 
-function Registrations({updateActivities}){
+function Registrations(){
   const [isLoading, setIsLoading] = useState(false)
   const [isUpdated, setIsUpdated] = useState(true)
   const [tableData, setTableData] = useState({
@@ -17,7 +17,8 @@ function Registrations({updateActivities}){
       time4: "none"
     }
   })
-  const {camper, activities} = useContext(MyContext)
+  const {camper, setCamper, activities} = useContext(MyContext)
+  
 
   useEffect(()=>{
     // find camper's active registrations to auto-fill form
@@ -36,9 +37,11 @@ function Registrations({updateActivities}){
       if (camper){
         camper.activities.map((activity)=>{
           registrations[activity.dates] = activity.id
+          const activitySignup = camper.signups.filter((signup)=>signup.activity_id === activity.id)[0]
           tableData.rows.push(<tr key={activity.id}>
             <td>{activity.name}</td>
-            <td>${activity.cost}</td>
+            {activitySignup.paid ? <td className="green">${activity.cost} (paid)</td> : <td className="red">${activity.cost} (unpaid)<button onClick={()=>handlePayFee(activitySignup.id)}>pay fee</button></td>}
+            
           </tr>)
           tableData.total += activity.cost
           return null
@@ -63,6 +66,11 @@ function Registrations({updateActivities}){
     return options
   }
 
+  // update user state after changing registrations
+  function updateCamper(camper){
+    setCamper(camper)
+  }
+
   function handleChange(e){
     const value = e.target.value
     setFormData({
@@ -76,6 +84,7 @@ function Registrations({updateActivities}){
   }
 
   function handleSubmit(e){
+    console.log(formData)
     e.preventDefault()
     setIsLoading(true)
     fetch('/signups', {
@@ -86,9 +95,24 @@ function Registrations({updateActivities}){
       body: JSON.stringify(formData)
     })
     .then((r)=>r.json())
-    .then((data)=>updateActivities(data))
+    .then((data)=>{
+      console.log(data.activities)
+      updateCamper(data)
+    })
     setIsLoading(false)
     setIsUpdated(true)
+  }
+
+  function handlePayFee(signupId){
+    fetch(`/signups/${signupId}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify({paid: true})
+    })
+    .then((r)=>r.json())
+    .then((data)=>setCamper(data))
   }
 
   if (!camper) return <em>Please login to view registrations</em>

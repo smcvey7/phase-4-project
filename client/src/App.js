@@ -50,17 +50,6 @@ function App() {
       }
     })
   }
-// set state with user info
-  function onLogin(user){
-    setCamper(user)
-  }
-// update user state after changing registrations
-  function updateActivities(data){
-    setCamper({
-      ...camper,
-      activities: data
-    })
-  }
 
   return (
     <div id='app'>
@@ -78,9 +67,9 @@ function App() {
         <Route path="/discovery" element={<Discovery/>} />
         <Route path="/sports" element={<Sports/>} />
         <Route path="/contact" element={<Contact/>} />
-        <Route path="/login" element={<LoginSignUp onLogin={onLogin} />} />
+        <Route path="/login" element={<LoginSignUp/>} />
         <Route path='/register' element={<Register/>} />
-        <Route path='/registrations' element={<Registrations updateActivities={updateActivities}/>} />
+        <Route path='/registrations' element={<Registrations/>} />
         <Route path='/message-list' element={<MessageList/>} />
         <Route path='/camper-registrations' element={<CamperRegistrations/>} />
       </Routes>
