@@ -40,7 +40,7 @@ function Registrations(){
           const activitySignup = camper.signups.filter((signup)=>signup.activity_id === activity.id)[0]
           tableData.rows.push(<tr key={activity.id}>
             <td>{activity.name}</td>
-            {activitySignup.paid ? <td className="green">${activity.cost} (paid)</td> : <td className="red">${activity.cost} (unpaid)<button onClick={()=>handlePayFee(activitySignup.id)}>pay fee</button></td>}
+            {activitySignup.paid ? <td className="green">${activity.cost} (paid)</td> : <td className="red">${activity.cost} (unpaid) <button onClick={()=>handlePayFee(activitySignup.id)}>pay fee</button></td>}
             
           </tr>)
           tableData.total += activity.cost
@@ -84,7 +84,6 @@ function Registrations(){
   }
 
   function handleSubmit(e){
-    console.log(formData)
     e.preventDefault()
     setIsLoading(true)
     fetch('/signups', {
@@ -96,7 +95,6 @@ function Registrations(){
     })
     .then((r)=>r.json())
     .then((data)=>{
-      console.log(data.activities)
       updateCamper(data)
     })
     setIsLoading(false)
