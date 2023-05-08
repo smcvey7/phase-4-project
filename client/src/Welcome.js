@@ -1,9 +1,21 @@
 import React, {useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import MyContext from "./MyContext";
 
-function Welcome({ onLogout }){
-  const {camper} = useContext(MyContext)
+function Welcome(){
+  const {camper, setCamper} = useContext(MyContext)
+  const navigate = useNavigate()
+
+  // delete session[:camper_id]
+  function onLogout(){
+    fetch('/logout', {method: "DELETE"}).then((r)=>{
+      if (r.ok){
+        navigate('/')
+        setCamper(null)
+      }
+    })
+  }
   return(
     <div id="welcome">
       {camper ?

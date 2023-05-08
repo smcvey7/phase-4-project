@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import MyContext from "./MyContext";
 
-function LoginSignUp({ onLogin }){
+function LoginSignUp(){
   const {setCamper} = useContext(MyContext)
 
   const [userInfo, setUserInfo] = useState({

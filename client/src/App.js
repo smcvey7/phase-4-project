@@ -40,16 +40,6 @@ function App() {
     .then((r)=>r.json())
     .then((data)=>setActivities(data))
   }, [camper, setActivities])
-  
-// delete session[:camper_id]
-  function onLogout(){
-    fetch('/logout', {method: "DELETE"}).then((r)=>{
-      if (r.ok){
-        navigate('/')
-        setCamper(null)
-      }
-    })
-  }
 
   return (
     <div id='app'>
@@ -58,7 +48,7 @@ function App() {
           <h1 id='siteName' className='headerMargin'>SCAMPS</h1>
           <h3 className='headerMargin'>Salem Camps</h3>
         </div>
-        <Welcome onLogout={onLogout} />
+        <Welcome/>
       </div>
       <NavBar />
       <div id='body'>

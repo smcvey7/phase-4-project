@@ -16,7 +16,10 @@ function ActivityModule({activity}){
     <div className="registrationModule">
       <h3>{activity.name} - {activity.age_group} ({setDates(activity.dates)})</h3>
       <ul>
-        {activity.campers.map((camper)=><li key={activity.id + camper.id}>{camper.first_name} {camper.last_name}</li>)}
+        {activity.campers.map((camper)=>{
+          const isPaid = activity.signups.filter((signup)=>signup.camper_id === camper.id)[0].paid
+          return <li className={isPaid ? "" : "red"} key={activity.id + camper.id}>{camper.first_name} {camper.last_name} ({camper.username})</li>
+        })}
       </ul>
     </div>
   )
