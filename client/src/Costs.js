@@ -7,6 +7,7 @@ function Costs({tableData}){
               <thead>
                 <tr>
                   <th>Camp</th>
+                  <th>Notes<small><em> (click to edit)</em></small></th>
                   <th>Fee</th>
                 </tr>
               </thead>
@@ -15,6 +16,7 @@ function Costs({tableData}){
               </tbody>
               <tfoot>
                 <tr>
+                  <th/>
                   <th>Total:</th>
                   <th>${tableData.total}</th>
                 </tr>

@@ -17,6 +17,12 @@ h1, h2, h3.red{
   margin-left: 10px;
 }
 
+td{
+  padding-right: 10px;
+}
+
+
+
 h4{
   width: 30%;
   margin: 0px;
@@ -66,7 +72,7 @@ h4.subject{
 }
 
 #costTableDiv{
-  width: 40%;
+  width: 80%;
 }
 
 th{
@@ -269,6 +275,10 @@ p.activityInfo{
   margin-top: 0px;
   height: auto;
 
+}
+
+.blueText{
+  color: blue;
 }
 
 .blue{

@@ -9,7 +9,7 @@ class SignupsController < ApplicationController
 
   def update
     signup = Signup.find_by(id: params[:id])
-    signup.update(paid: params[:paid])
+    signup.update(notes: params[:notes])
     render json: signup.camper
   end
 

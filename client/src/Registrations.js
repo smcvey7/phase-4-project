@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useContext} from "react";
 import Costs from "./Costs";
 import MyContext from "./MyContext";
+import CostTableRow from "./CostTableRow";
 
 function Registrations(){
   const [isLoading, setIsLoading] = useState(false)
@@ -38,11 +39,7 @@ function Registrations(){
         camper.activities.map((activity)=>{
           registrations[activity.dates] = activity.id
           const activitySignup = camper.signups.filter((signup)=>signup.activity_id === activity.id)[0]
-          tableData.rows.push(<tr key={activity.id}>
-            <td>{activity.name}</td>
-            {activitySignup.paid ? <td className="green">${activity.cost} (paid)</td> : <td className="red">${activity.cost} (unpaid) <button onClick={()=>handlePayFee(activitySignup.id)}>pay fee</button></td>}
-            
-          </tr>)
+          tableData.rows.push(<CostTableRow activity={activity} activitySignup={activitySignup}/>)
           tableData.total += activity.cost
           return null
         })
@@ -101,24 +98,12 @@ function Registrations(){
     setIsUpdated(true)
   }
 
-  function handlePayFee(signupId){
-    fetch(`/signups/${signupId}`, {
-      method: "PATCH",
-      headers: {
-        'Content-Type': "application/json"
-      },
-      body: JSON.stringify({paid: true})
-    })
-    .then((r)=>r.json())
-    .then((data)=>setCamper(data))
-  }
-
   if (!camper) return <em>Please login to view registrations</em>
 
   return(
     <div id="registrations">
       <h2>{camper.first_name}'s Registrations (age: {camper.age})</h2>
-      <div id="registrations" className="flexContainer horizontal spaceAround">
+      <div id="registrations" className="flexContainer vertical ">
         <div id="registrationList">
           <h3 id="changeRegistrations">Change Registrations</h3>
           {isUpdated ? <p className="green">Your registrations are up to date</p> : <p className="red">Registrations changed. Click update to save changes</p>}

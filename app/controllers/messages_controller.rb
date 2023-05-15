@@ -23,7 +23,6 @@ class MessagesController < ApplicationController
   end
 
   def update
-    puts "params", params
     message = Message.find_by(id: params[:id])
     message.update(read: params[:read])
 
