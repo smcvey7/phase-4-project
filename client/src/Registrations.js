@@ -39,7 +39,7 @@ function Registrations(){
         camper.activities.map((activity)=>{
           registrations[activity.dates] = activity.id
           const activitySignup = camper.signups.filter((signup)=>signup.activity_id === activity.id)[0]
-          tableData.rows.push(<CostTableRow activity={activity} activitySignup={activitySignup}/>)
+          tableData.rows.push(<CostTableRow key={activitySignup.id} activity={activity} activitySignup={activitySignup}/>)
           tableData.total += activity.cost
           return null
         })

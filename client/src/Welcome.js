@@ -11,8 +11,11 @@ function Welcome(){
   function onLogout(){
     fetch('/logout', {method: "DELETE"}).then((r)=>{
       if (r.ok){
+        console.log(r)
         navigate('/')
         setCamper(null)
+      }else{
+        console.log(r)
       }
     })
   }

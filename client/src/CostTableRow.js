@@ -3,19 +3,17 @@ import MyContext from "./MyContext";
 
 function CostTableRow({activity, activitySignup}){
   const [isEditing, setIsEditing] = useState(false)
-  const [noteContent, setNoteContent] = useState("click to add note")
+  const [noteContent, setNoteContent] = useState("")
   const {camper, setCamper} = useContext(MyContext)
 
   useEffect(()=>{
-    if (activitySignup && activitySignup.notes !== ""){
+    if (activitySignup){
       setNoteContent(activitySignup.notes)
     }
-  }, [activitySignup])
+  }, [activitySignup, camper])
 
   function handleSubmit(e){
     e.preventDefault()
-    const update = JSON.stringify({notes: noteContent})
-    console.log(update)
     fetch(`/signups/${activitySignup.id}`, {
       method: "PATCH",
       headers: {
@@ -30,12 +28,7 @@ function CostTableRow({activity, activitySignup}){
   }
 
   function handleChange(e){
-    const newContent = e.target.value
-    if (newContent === ''){
-      setNoteContent("click to add note")
-    }else{
-      setNoteContent(e.target.value)
-    }
+    setNoteContent(e.target.value)
   }
 
   return(
@@ -44,10 +37,10 @@ function CostTableRow({activity, activitySignup}){
       {isEditing ?
         <td>
           <form onSubmit={handleSubmit}>
-            <input value={noteContent==="click to add note"? "" : noteContent} onChange={handleChange}/>
+            <input value={noteContent===""? "" : noteContent} onChange={handleChange}/>
             <input type="submit" />
           </form>
-        </td> : <td onClick={()=>setIsEditing(true)}>{noteContent === "click to add note" ? <small className="blueText">add note</small> : noteContent}</td>}
+        </td> : <td onClick={()=>setIsEditing(true)}>{noteContent === "" ? <small className="blueText">add note</small> : noteContent}</td>}
       {activitySignup.paid ? <td className="green">${activity.cost} (paid)</td> : <td className="red">${activity.cost} (unpaid)</td>}
     </tr>
   )
